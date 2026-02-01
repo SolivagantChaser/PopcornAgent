@@ -1,0 +1,36 @@
+# docker-compose.yml
+version: '3.8'
+services:
+  # Java Agent 核心服务
+  agent-java:
+    build: ./agent-java-core
+    ports:
+      - "8080:8080" # HTTP 接口端口
+    environment:
+      - PYTHON_AGENT_GRPC_HOST=agent-python
+      - PYTHON_AGENT_GRPC_PORT=50051
+    depends_on:
+      - agent-python
+      - redis
+    restart: always
+
+  # Python gRPC 服务（AI/数据处理能力）
+  agent-python:
+    build: ./agent-python
+    ports:
+      - "50051:50051" # gRPC 端口
+    environment:
+      - OPENAI_API_KEY=your-api-key
+    restart: always
+
+  # 短期记忆/缓存
+  redis:
+    image: redis:7-alpine
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis-data:/data
+    restart: always
+
+volumes:
+  redis-data:

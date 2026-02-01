@@ -1,0 +1,42 @@
+syntax = "proto3";
+package com.agent.adapter.python; // 这个是Protobuf自身的包名，可不变
+option java_multiple_files = true;
+option java_package = "com.popcorn.agent.core.adapter.python.grpc"; // 修正为带popcorn的包名
+option java_outer_classname = "PythonAgentProto"; // Java外部类名
+
+// Python能力服务：AI推理、数据处理
+service PythonAgentService {
+  // AI大模型推理接口
+  rpc LlmInfer (LlmInferRequest) returns (LlmInferResponse);
+  // 数据处理接口（结构化数据清洗/转换）
+  rpc DataProcess (DataProcessRequest) returns (DataProcessResponse);
+}
+
+// AI推理请求
+message LlmInferRequest {
+  string prompt = 1;        // 提示词
+  string model = 2;         // 模型名称（如gpt-3.5-turbo）
+  map<string, string> parameters = 3; // 推理参数（temperature/max_tokens）
+}
+
+// AI推理响应
+message LlmInferResponse {
+  bool success = 1;         // 是否成功
+  string result = 2;        // 推理结果
+  string error_msg = 3;     // 错误信息（失败时非空）
+  int64 cost_time = 4;      // 耗时（毫秒）
+}
+
+// 数据处理请求
+message DataProcessRequest {
+  string data = 1;          // 原始数据（JSON格式）
+  string process_type = 2;  // 处理类型：clean-清洗，convert-转换
+}
+
+// 数据处理响应
+message DataProcessResponse {
+  bool success = 1;
+  string processed_data = 2;// 处理后数据（JSON格式）
+  string error_msg = 3;
+  int64 cost_time = 4;
+}

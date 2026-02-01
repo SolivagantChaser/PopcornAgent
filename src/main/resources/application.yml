@@ -1,0 +1,32 @@
+# 服务端口
+server:
+  port: 8080
+
+# Agent配置
+agent:
+  id: general-agent-001
+  name: 通用智能Agent-Demo
+
+# Python gRPC服务配置
+python:
+  agent:
+    grpc:
+      host: 127.0.0.1
+      port: 50051
+
+# 日志配置
+logging:
+  level:
+    com.agent: INFO
+    org.springframework: WARN
+    io.grpc: WARN
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{50} - %msg%n"
+
+# Spring配置
+spring:
+  application:
+    name: agent-java-core
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
