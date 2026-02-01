@@ -44,6 +44,7 @@ public final class DataProcessResponse extends
     private DataProcessResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
         super(builder);
     }
+
     private DataProcessResponse() {
         result_ = "";
         errorMsg_ = "";

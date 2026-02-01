@@ -37,6 +37,7 @@ public final class DataProcessRequest extends
     private volatile java.lang.Object data_;
     private volatile java.lang.Object processType_;
     private byte memoizedIsInitialized = -1;
+
     // Use DataProcessRequest.newBuilder() to construct.
     private DataProcessRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
         super(builder);

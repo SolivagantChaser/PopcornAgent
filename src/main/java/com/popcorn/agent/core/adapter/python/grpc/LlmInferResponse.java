@@ -44,6 +44,7 @@ public final class LlmInferResponse extends
     private LlmInferResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
         super(builder);
     }
+
     private LlmInferResponse() {
         result_ = "";
         errorMsg_ = "";

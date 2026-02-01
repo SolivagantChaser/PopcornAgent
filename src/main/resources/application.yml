@@ -1,6 +1,3 @@
-# 最开始设计的原版配置，仅保留服务端口，无任何冗余配置
-server:
-  port: 8080 # 服务端口（默认8080）
 spring:
   application:
     name: agent-java-core # 应用名称
@@ -8,3 +5,25 @@ logging:
   level:
     com.agent.core: info # 项目日志级别
     io.grpc: warn # gRPC日志级别（屏蔽冗余日志）
+
+server:
+  port: 8080
+
+# Agent核心配置
+agent:
+  # gRPC客户端配置
+  grpc:
+    python-server:
+      host: 127.0.0.1
+      port: 50051
+    # 超时时间(秒)
+    timeout-second: 5
+    # 保活间隔(秒)
+    keep-alive-second: 30
+    # 优雅关闭等待(秒)
+    shutdown-wait-second: 5
+
+  # 记忆模块配置
+  memory:
+    # 存储类型: memory/redis
+    store-type: memory

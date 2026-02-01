@@ -89,6 +89,7 @@ public final class PythonAgentProto {
                 internal_static_com_agent_adapter_python_DataProcessResponse_descriptor,
                 new java.lang.String[]{"Success", "Result", "ErrorMsg",});
     }
+
     private PythonAgentProto() {
     }
 
