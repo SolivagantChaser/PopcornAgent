@@ -4,100 +4,111 @@
 package com.popcorn.agent.core.adapter.python.grpc;
 
 public interface LlmInferRequestOrBuilder extends
-    // @@protoc_insertion_point(interface_extends:com.agent.adapter.python.LlmInferRequest)
-    com.google.protobuf.MessageOrBuilder {
+        // @@protoc_insertion_point(interface_extends:com.agent.adapter.python.LlmInferRequest)
+        com.google.protobuf.MessageOrBuilder {
 
-  /**
-   * <pre>
-   * 提示词
-   * </pre>
-   *
-   * <code>string prompt = 1;</code>
-   * @return The prompt.
-   */
-  java.lang.String getPrompt();
-  /**
-   * <pre>
-   * 提示词
-   * </pre>
-   *
-   * <code>string prompt = 1;</code>
-   * @return The bytes for prompt.
-   */
-  com.google.protobuf.ByteString
-      getPromptBytes();
+    /**
+     * <pre>
+     * 推理提示词
+     * </pre>
+     *
+     * <code>string prompt = 1;</code>
+     *
+     * @return The prompt.
+     */
+    java.lang.String getPrompt();
 
-  /**
-   * <pre>
-   * 模型名称（如gpt-3.5-turbo）
-   * </pre>
-   *
-   * <code>string model = 2;</code>
-   * @return The model.
-   */
-  java.lang.String getModel();
-  /**
-   * <pre>
-   * 模型名称（如gpt-3.5-turbo）
-   * </pre>
-   *
-   * <code>string model = 2;</code>
-   * @return The bytes for model.
-   */
-  com.google.protobuf.ByteString
-      getModelBytes();
+    /**
+     * <pre>
+     * 推理提示词
+     * </pre>
+     *
+     * <code>string prompt = 1;</code>
+     *
+     * @return The bytes for prompt.
+     */
+    com.google.protobuf.ByteString
+    getPromptBytes();
 
-  /**
-   * <pre>
-   * 推理参数（temperature/max_tokens）
-   * </pre>
-   *
-   * <code>map&lt;string, string&gt; parameters = 3;</code>
-   */
-  int getParametersCount();
-  /**
-   * <pre>
-   * 推理参数（temperature/max_tokens）
-   * </pre>
-   *
-   * <code>map&lt;string, string&gt; parameters = 3;</code>
-   */
-  boolean containsParameters(
-      java.lang.String key);
-  /**
-   * Use {@link #getParametersMap()} instead.
-   */
-  @java.lang.Deprecated
-  java.util.Map<java.lang.String, java.lang.String>
-  getParameters();
-  /**
-   * <pre>
-   * 推理参数（temperature/max_tokens）
-   * </pre>
-   *
-   * <code>map&lt;string, string&gt; parameters = 3;</code>
-   */
-  java.util.Map<java.lang.String, java.lang.String>
-  getParametersMap();
-  /**
-   * <pre>
-   * 推理参数（temperature/max_tokens）
-   * </pre>
-   *
-   * <code>map&lt;string, string&gt; parameters = 3;</code>
-   */
+    /**
+     * <pre>
+     * 模型名称
+     * </pre>
+     *
+     * <code>string model = 2;</code>
+     *
+     * @return The model.
+     */
+    java.lang.String getModel();
 
-  java.lang.String getParametersOrDefault(
-      java.lang.String key,
-      java.lang.String defaultValue);
-  /**
-   * <pre>
-   * 推理参数（temperature/max_tokens）
-   * </pre>
-   *
-   * <code>map&lt;string, string&gt; parameters = 3;</code>
-   */
+    /**
+     * <pre>
+     * 模型名称
+     * </pre>
+     *
+     * <code>string model = 2;</code>
+     *
+     * @return The bytes for model.
+     */
+    com.google.protobuf.ByteString
+    getModelBytes();
 
-  java.lang.String getParametersOrThrow(
-      java.lang.String key);
+    /**
+     * <pre>
+     * 模型参数
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; parameters = 3;</code>
+     */
+    int getParametersCount();
+
+    /**
+     * <pre>
+     * 模型参数
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; parameters = 3;</code>
+     */
+    boolean containsParameters(
+            java.lang.String key);
+
+    /**
+     * Use {@link #getParametersMap()} instead.
+     */
+    @java.lang.Deprecated
+    java.util.Map<java.lang.String, java.lang.String>
+    getParameters();
+
+    /**
+     * <pre>
+     * 模型参数
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; parameters = 3;</code>
+     */
+    java.util.Map<java.lang.String, java.lang.String>
+    getParametersMap();
+
+    /**
+     * <pre>
+     * 模型参数
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; parameters = 3;</code>
+     */
+
+    java.lang.String getParametersOrDefault(
+            java.lang.String key,
+            java.lang.String defaultValue);
+
+    /**
+     * <pre>
+     * 模型参数
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; parameters = 3;</code>
+     */
+
+    java.lang.String getParametersOrThrow(
+            java.lang.String key);
 }

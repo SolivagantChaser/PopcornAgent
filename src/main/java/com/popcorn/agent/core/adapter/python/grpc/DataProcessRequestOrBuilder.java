@@ -4,46 +4,52 @@
 package com.popcorn.agent.core.adapter.python.grpc;
 
 public interface DataProcessRequestOrBuilder extends
-    // @@protoc_insertion_point(interface_extends:com.agent.adapter.python.DataProcessRequest)
-    com.google.protobuf.MessageOrBuilder {
+        // @@protoc_insertion_point(interface_extends:com.agent.adapter.python.DataProcessRequest)
+        com.google.protobuf.MessageOrBuilder {
 
-  /**
-   * <pre>
-   * 原始数据（JSON格式）
-   * </pre>
-   *
-   * <code>string data = 1;</code>
-   * @return The data.
-   */
-  java.lang.String getData();
-  /**
-   * <pre>
-   * 原始数据（JSON格式）
-   * </pre>
-   *
-   * <code>string data = 1;</code>
-   * @return The bytes for data.
-   */
-  com.google.protobuf.ByteString
-      getDataBytes();
+    /**
+     * <pre>
+     * 原始数据
+     * </pre>
+     *
+     * <code>string data = 1;</code>
+     *
+     * @return The data.
+     */
+    java.lang.String getData();
 
-  /**
-   * <pre>
-   * 处理类型：clean-清洗，convert-转换
-   * </pre>
-   *
-   * <code>string process_type = 2;</code>
-   * @return The processType.
-   */
-  java.lang.String getProcessType();
-  /**
-   * <pre>
-   * 处理类型：clean-清洗，convert-转换
-   * </pre>
-   *
-   * <code>string process_type = 2;</code>
-   * @return The bytes for processType.
-   */
-  com.google.protobuf.ByteString
-      getProcessTypeBytes();
+    /**
+     * <pre>
+     * 原始数据
+     * </pre>
+     *
+     * <code>string data = 1;</code>
+     *
+     * @return The bytes for data.
+     */
+    com.google.protobuf.ByteString
+    getDataBytes();
+
+    /**
+     * <pre>
+     * 处理类型（如：parse/convert/analyze）
+     * </pre>
+     *
+     * <code>string process_type = 2;</code>
+     *
+     * @return The processType.
+     */
+    java.lang.String getProcessType();
+
+    /**
+     * <pre>
+     * 处理类型（如：parse/convert/analyze）
+     * </pre>
+     *
+     * <code>string process_type = 2;</code>
+     *
+     * @return The bytes for processType.
+     */
+    com.google.protobuf.ByteString
+    getProcessTypeBytes();
 }

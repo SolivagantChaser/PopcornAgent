@@ -7,855 +7,895 @@ package com.popcorn.agent.core.adapter.python.grpc;
  * <pre>
  * 数据处理响应
  * </pre>
- *
+ * <p>
  * Protobuf type {@code com.agent.adapter.python.DataProcessResponse}
  */
 public final class DataProcessResponse extends
-    com.google.protobuf.GeneratedMessageV3 implements
-    // @@protoc_insertion_point(message_implements:com.agent.adapter.python.DataProcessResponse)
-    DataProcessResponseOrBuilder {
-private static final long serialVersionUID = 0L;
-  // Use DataProcessResponse.newBuilder() to construct.
-  private DataProcessResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-    super(builder);
-  }
-  private DataProcessResponse() {
-    processedData_ = "";
-    errorMsg_ = "";
-  }
-
-  @java.lang.Override
-  @SuppressWarnings({"unused"})
-  protected java.lang.Object newInstance(
-      UnusedPrivateParameter unused) {
-    return new DataProcessResponse();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
-    return this.unknownFields;
-  }
-  private DataProcessResponse(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 8: {
-
-            success_ = input.readBool();
-            break;
-          }
-          case 18: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            processedData_ = s;
-            break;
-          }
-          case 26: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            errorMsg_ = s;
-            break;
-          }
-          case 32: {
-
-            costTime_ = input.readInt64();
-            break;
-          }
-          default: {
-            if (!parseUnknownField(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
-            }
-            break;
-          }
+        com.google.protobuf.GeneratedMessageV3 implements
+        // @@protoc_insertion_point(message_implements:com.agent.adapter.python.DataProcessResponse)
+        DataProcessResponseOrBuilder {
+    public static final int SUCCESS_FIELD_NUMBER = 1;
+    public static final int RESULT_FIELD_NUMBER = 2;
+    public static final int ERROR_MSG_FIELD_NUMBER = 3;
+    private static final long serialVersionUID = 0L;
+    // @@protoc_insertion_point(class_scope:com.agent.adapter.python.DataProcessResponse)
+    private static final com.popcorn.agent.core.adapter.python.grpc.DataProcessResponse DEFAULT_INSTANCE;
+    private static final com.google.protobuf.Parser<DataProcessResponse>
+            PARSER = new com.google.protobuf.AbstractParser<DataProcessResponse>() {
+        @java.lang.Override
+        public DataProcessResponse parsePartialFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return new DataProcessResponse(input, extensionRegistry);
         }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
-    } finally {
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-    return com.popcorn.agent.core.adapter.python.grpc.PythonAgentProto.internal_static_com_agent_adapter_python_DataProcessResponse_descriptor;
-  }
+    };
 
-  @java.lang.Override
-  protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internalGetFieldAccessorTable() {
-    return com.popcorn.agent.core.adapter.python.grpc.PythonAgentProto.internal_static_com_agent_adapter_python_DataProcessResponse_fieldAccessorTable
-        .ensureFieldAccessorsInitialized(
-            com.popcorn.agent.core.adapter.python.grpc.DataProcessResponse.class, com.popcorn.agent.core.adapter.python.grpc.DataProcessResponse.Builder.class);
-  }
-
-  public static final int SUCCESS_FIELD_NUMBER = 1;
-  private boolean success_;
-  /**
-   * <code>bool success = 1;</code>
-   * @return The success.
-   */
-  @java.lang.Override
-  public boolean getSuccess() {
-    return success_;
-  }
-
-  public static final int PROCESSED_DATA_FIELD_NUMBER = 2;
-  private volatile java.lang.Object processedData_;
-  /**
-   * <pre>
-   * 处理后数据（JSON格式）
-   * </pre>
-   *
-   * <code>string processed_data = 2;</code>
-   * @return The processedData.
-   */
-  @java.lang.Override
-  public java.lang.String getProcessedData() {
-    java.lang.Object ref = processedData_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      processedData_ = s;
-      return s;
+    static {
+        DEFAULT_INSTANCE = new com.popcorn.agent.core.adapter.python.grpc.DataProcessResponse();
     }
-  }
-  /**
-   * <pre>
-   * 处理后数据（JSON格式）
-   * </pre>
-   *
-   * <code>string processed_data = 2;</code>
-   * @return The bytes for processedData.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString
-      getProcessedDataBytes() {
-    java.lang.Object ref = processedData_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      processedData_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
 
-  public static final int ERROR_MSG_FIELD_NUMBER = 3;
-  private volatile java.lang.Object errorMsg_;
-  /**
-   * <code>string error_msg = 3;</code>
-   * @return The errorMsg.
-   */
-  @java.lang.Override
-  public java.lang.String getErrorMsg() {
-    java.lang.Object ref = errorMsg_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      errorMsg_ = s;
-      return s;
-    }
-  }
-  /**
-   * <code>string error_msg = 3;</code>
-   * @return The bytes for errorMsg.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString
-      getErrorMsgBytes() {
-    java.lang.Object ref = errorMsg_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      errorMsg_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
+    private boolean success_;
+    private volatile java.lang.Object result_;
+    private volatile java.lang.Object errorMsg_;
+    private byte memoizedIsInitialized = -1;
 
-  public static final int COST_TIME_FIELD_NUMBER = 4;
-  private long costTime_;
-  /**
-   * <code>int64 cost_time = 4;</code>
-   * @return The costTime.
-   */
-  @java.lang.Override
-  public long getCostTime() {
-    return costTime_;
-  }
-
-  private byte memoizedIsInitialized = -1;
-  @java.lang.Override
-  public final boolean isInitialized() {
-    byte isInitialized = memoizedIsInitialized;
-    if (isInitialized == 1) return true;
-    if (isInitialized == 0) return false;
-
-    memoizedIsInitialized = 1;
-    return true;
-  }
-
-  @java.lang.Override
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
-    if (success_ != false) {
-      output.writeBool(1, success_);
+    // Use DataProcessResponse.newBuilder() to construct.
+    private DataProcessResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+        super(builder);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(processedData_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, processedData_);
+    private DataProcessResponse() {
+        result_ = "";
+        errorMsg_ = "";
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(errorMsg_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, errorMsg_);
-    }
-    if (costTime_ != 0L) {
-      output.writeInt64(4, costTime_);
-    }
-    unknownFields.writeTo(output);
-  }
 
-  @java.lang.Override
-  public int getSerializedSize() {
-    int size = memoizedSize;
-    if (size != -1) return size;
+    private DataProcessResponse(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+        this();
+        if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+        }
+        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+                com.google.protobuf.UnknownFieldSet.newBuilder();
+        try {
+            boolean done = false;
+            while (!done) {
+                int tag = input.readTag();
+                switch (tag) {
+                    case 0:
+                        done = true;
+                        break;
+                    case 8: {
 
-    size = 0;
-    if (success_ != false) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeBoolSize(1, success_);
-    }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(processedData_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, processedData_);
-    }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(errorMsg_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, errorMsg_);
-    }
-    if (costTime_ != 0L) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(4, costTime_);
-    }
-    size += unknownFields.getSerializedSize();
-    memoizedSize = size;
-    return size;
-  }
+                        success_ = input.readBool();
+                        break;
+                    }
+                    case 18: {
+                        java.lang.String s = input.readStringRequireUtf8();
 
-  @java.lang.Override
-  public boolean equals(final java.lang.Object obj) {
-    if (obj == this) {
-     return true;
+                        result_ = s;
+                        break;
+                    }
+                    case 26: {
+                        java.lang.String s = input.readStringRequireUtf8();
+
+                        errorMsg_ = s;
+                        break;
+                    }
+                    default: {
+                        if (!parseUnknownField(
+                                input, unknownFields, extensionRegistry, tag)) {
+                            done = true;
+                        }
+                        break;
+                    }
+                }
+            }
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(this);
+        } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(
+                    e).setUnfinishedMessage(this);
+        } finally {
+            this.unknownFields = unknownFields.build();
+            makeExtensionsImmutable();
+        }
     }
-    if (!(obj instanceof com.popcorn.agent.core.adapter.python.grpc.DataProcessResponse)) {
-      return super.equals(obj);
-    }
-    com.popcorn.agent.core.adapter.python.grpc.DataProcessResponse other = (com.popcorn.agent.core.adapter.python.grpc.DataProcessResponse) obj;
 
-    if (getSuccess()
-        != other.getSuccess()) return false;
-    if (!getProcessedData()
-        .equals(other.getProcessedData())) return false;
-    if (!getErrorMsg()
-        .equals(other.getErrorMsg())) return false;
-    if (getCostTime()
-        != other.getCostTime()) return false;
-    if (!unknownFields.equals(other.unknownFields)) return false;
-    return true;
-  }
-
-  @java.lang.Override
-  public int hashCode() {
-    if (memoizedHashCode != 0) {
-      return memoizedHashCode;
-    }
-    int hash = 41;
-    hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + SUCCESS_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-        getSuccess());
-    hash = (37 * hash) + PROCESSED_DATA_FIELD_NUMBER;
-    hash = (53 * hash) + getProcessedData().hashCode();
-    hash = (37 * hash) + ERROR_MSG_FIELD_NUMBER;
-    hash = (53 * hash) + getErrorMsg().hashCode();
-    hash = (37 * hash) + COST_TIME_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-        getCostTime());
-    hash = (29 * hash) + unknownFields.hashCode();
-    memoizedHashCode = hash;
-    return hash;
-  }
-
-  public static com.popcorn.agent.core.adapter.python.grpc.DataProcessResponse parseFrom(
-      java.nio.ByteBuffer data)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    return PARSER.parseFrom(data);
-  }
-  public static com.popcorn.agent.core.adapter.python.grpc.DataProcessResponse parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    return PARSER.parseFrom(data, extensionRegistry);
-  }
-  public static com.popcorn.agent.core.adapter.python.grpc.DataProcessResponse parseFrom(
-      com.google.protobuf.ByteString data)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    return PARSER.parseFrom(data);
-  }
-  public static com.popcorn.agent.core.adapter.python.grpc.DataProcessResponse parseFrom(
-      com.google.protobuf.ByteString data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    return PARSER.parseFrom(data, extensionRegistry);
-  }
-  public static com.popcorn.agent.core.adapter.python.grpc.DataProcessResponse parseFrom(byte[] data)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    return PARSER.parseFrom(data);
-  }
-  public static com.popcorn.agent.core.adapter.python.grpc.DataProcessResponse parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    return PARSER.parseFrom(data, extensionRegistry);
-  }
-  public static com.popcorn.agent.core.adapter.python.grpc.DataProcessResponse parseFrom(java.io.InputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
-  }
-  public static com.popcorn.agent.core.adapter.python.grpc.DataProcessResponse parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
-  }
-  public static com.popcorn.agent.core.adapter.python.grpc.DataProcessResponse parseDelimitedFrom(java.io.InputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
-  }
-  public static com.popcorn.agent.core.adapter.python.grpc.DataProcessResponse parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-  }
-  public static com.popcorn.agent.core.adapter.python.grpc.DataProcessResponse parseFrom(
-      com.google.protobuf.CodedInputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
-  }
-  public static com.popcorn.agent.core.adapter.python.grpc.DataProcessResponse parseFrom(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
-  }
-
-  @java.lang.Override
-  public Builder newBuilderForType() { return newBuilder(); }
-  public static Builder newBuilder() {
-    return DEFAULT_INSTANCE.toBuilder();
-  }
-  public static Builder newBuilder(com.popcorn.agent.core.adapter.python.grpc.DataProcessResponse prototype) {
-    return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-  }
-  @java.lang.Override
-  public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
-  }
-
-  @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-    Builder builder = new Builder(parent);
-    return builder;
-  }
-  /**
-   * <pre>
-   * 数据处理响应
-   * </pre>
-   *
-   * Protobuf type {@code com.agent.adapter.python.DataProcessResponse}
-   */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:com.agent.adapter.python.DataProcessResponse)
-      com.popcorn.agent.core.adapter.python.grpc.DataProcessResponseOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.popcorn.agent.core.adapter.python.grpc.PythonAgentProto.internal_static_com_agent_adapter_python_DataProcessResponse_descriptor;
+    getDescriptor() {
+        return com.popcorn.agent.core.adapter.python.grpc.PythonAgentProto.internal_static_com_agent_adapter_python_DataProcessResponse_descriptor;
+    }
+
+    public static com.popcorn.agent.core.adapter.python.grpc.DataProcessResponse parseFrom(
+            java.nio.ByteBuffer data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+    }
+
+    public static com.popcorn.agent.core.adapter.python.grpc.DataProcessResponse parseFrom(
+            java.nio.ByteBuffer data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.popcorn.agent.core.adapter.python.grpc.DataProcessResponse parseFrom(
+            com.google.protobuf.ByteString data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+    }
+
+    public static com.popcorn.agent.core.adapter.python.grpc.DataProcessResponse parseFrom(
+            com.google.protobuf.ByteString data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.popcorn.agent.core.adapter.python.grpc.DataProcessResponse parseFrom(byte[] data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+    }
+
+    public static com.popcorn.agent.core.adapter.python.grpc.DataProcessResponse parseFrom(
+            byte[] data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.popcorn.agent.core.adapter.python.grpc.DataProcessResponse parseFrom(java.io.InputStream input)
+            throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+                .parseWithIOException(PARSER, input);
+    }
+
+    public static com.popcorn.agent.core.adapter.python.grpc.DataProcessResponse parseFrom(
+            java.io.InputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+                .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public static com.popcorn.agent.core.adapter.python.grpc.DataProcessResponse parseDelimitedFrom(java.io.InputStream input)
+            throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+                .parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.popcorn.agent.core.adapter.python.grpc.DataProcessResponse parseDelimitedFrom(
+            java.io.InputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+                .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public static com.popcorn.agent.core.adapter.python.grpc.DataProcessResponse parseFrom(
+            com.google.protobuf.CodedInputStream input)
+            throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+                .parseWithIOException(PARSER, input);
+    }
+
+    public static com.popcorn.agent.core.adapter.python.grpc.DataProcessResponse parseFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+                .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(com.popcorn.agent.core.adapter.python.grpc.DataProcessResponse prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    public static com.popcorn.agent.core.adapter.python.grpc.DataProcessResponse getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+    }
+
+    public static com.google.protobuf.Parser<DataProcessResponse> parser() {
+        return PARSER;
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+            UnusedPrivateParameter unused) {
+        return new DataProcessResponse();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+        return this.unknownFields;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return com.popcorn.agent.core.adapter.python.grpc.PythonAgentProto.internal_static_com_agent_adapter_python_DataProcessResponse_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              com.popcorn.agent.core.adapter.python.grpc.DataProcessResponse.class, com.popcorn.agent.core.adapter.python.grpc.DataProcessResponse.Builder.class);
+    internalGetFieldAccessorTable() {
+        return com.popcorn.agent.core.adapter.python.grpc.PythonAgentProto.internal_static_com_agent_adapter_python_DataProcessResponse_fieldAccessorTable
+                .ensureFieldAccessorsInitialized(
+                        com.popcorn.agent.core.adapter.python.grpc.DataProcessResponse.class, com.popcorn.agent.core.adapter.python.grpc.DataProcessResponse.Builder.class);
     }
 
-    // Construct using com.popcorn.agent.core.adapter.python.grpc.DataProcessResponse.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
-
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      super(parent);
-      maybeForceBuilderInitialization();
-    }
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
-      }
-    }
-    @java.lang.Override
-    public Builder clear() {
-      super.clear();
-      success_ = false;
-
-      processedData_ = "";
-
-      errorMsg_ = "";
-
-      costTime_ = 0L;
-
-      return this;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return com.popcorn.agent.core.adapter.python.grpc.PythonAgentProto.internal_static_com_agent_adapter_python_DataProcessResponse_descriptor;
-    }
-
-    @java.lang.Override
-    public com.popcorn.agent.core.adapter.python.grpc.DataProcessResponse getDefaultInstanceForType() {
-      return com.popcorn.agent.core.adapter.python.grpc.DataProcessResponse.getDefaultInstance();
-    }
-
-    @java.lang.Override
-    public com.popcorn.agent.core.adapter.python.grpc.DataProcessResponse build() {
-      com.popcorn.agent.core.adapter.python.grpc.DataProcessResponse result = buildPartial();
-      if (!result.isInitialized()) {
-        throw newUninitializedMessageException(result);
-      }
-      return result;
-    }
-
-    @java.lang.Override
-    public com.popcorn.agent.core.adapter.python.grpc.DataProcessResponse buildPartial() {
-      com.popcorn.agent.core.adapter.python.grpc.DataProcessResponse result = new com.popcorn.agent.core.adapter.python.grpc.DataProcessResponse(this);
-      result.success_ = success_;
-      result.processedData_ = processedData_;
-      result.errorMsg_ = errorMsg_;
-      result.costTime_ = costTime_;
-      onBuilt();
-      return result;
-    }
-
-    @java.lang.Override
-    public Builder clone() {
-      return super.clone();
-    }
-    @java.lang.Override
-    public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
-      return super.setField(field, value);
-    }
-    @java.lang.Override
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return super.clearField(field);
-    }
-    @java.lang.Override
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return super.clearOneof(oneof);
-    }
-    @java.lang.Override
-    public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
-      return super.setRepeatedField(field, index, value);
-    }
-    @java.lang.Override
-    public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
-      return super.addRepeatedField(field, value);
-    }
-    @java.lang.Override
-    public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof com.popcorn.agent.core.adapter.python.grpc.DataProcessResponse) {
-        return mergeFrom((com.popcorn.agent.core.adapter.python.grpc.DataProcessResponse)other);
-      } else {
-        super.mergeFrom(other);
-        return this;
-      }
-    }
-
-    public Builder mergeFrom(com.popcorn.agent.core.adapter.python.grpc.DataProcessResponse other) {
-      if (other == com.popcorn.agent.core.adapter.python.grpc.DataProcessResponse.getDefaultInstance()) return this;
-      if (other.getSuccess() != false) {
-        setSuccess(other.getSuccess());
-      }
-      if (!other.getProcessedData().isEmpty()) {
-        processedData_ = other.processedData_;
-        onChanged();
-      }
-      if (!other.getErrorMsg().isEmpty()) {
-        errorMsg_ = other.errorMsg_;
-        onChanged();
-      }
-      if (other.getCostTime() != 0L) {
-        setCostTime(other.getCostTime());
-      }
-      this.mergeUnknownFields(other.unknownFields);
-      onChanged();
-      return this;
-    }
-
-    @java.lang.Override
-    public final boolean isInitialized() {
-      return true;
-    }
-
-    @java.lang.Override
-    public Builder mergeFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      com.popcorn.agent.core.adapter.python.grpc.DataProcessResponse parsedMessage = null;
-      try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.popcorn.agent.core.adapter.python.grpc.DataProcessResponse) e.getUnfinishedMessage();
-        throw e.unwrapIOException();
-      } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
-      return this;
-    }
-
-    private boolean success_ ;
     /**
+     * <pre>
+     * 调用是否成功
+     * </pre>
+     *
      * <code>bool success = 1;</code>
+     *
      * @return The success.
      */
     @java.lang.Override
     public boolean getSuccess() {
-      return success_;
-    }
-    /**
-     * <code>bool success = 1;</code>
-     * @param value The success to set.
-     * @return This builder for chaining.
-     */
-    public Builder setSuccess(boolean value) {
-      
-      success_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>bool success = 1;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearSuccess() {
-      
-      success_ = false;
-      onChanged();
-      return this;
+        return success_;
     }
 
-    private java.lang.Object processedData_ = "";
     /**
      * <pre>
-     * 处理后数据（JSON格式）
+     * 处理结果
      * </pre>
      *
-     * <code>string processed_data = 2;</code>
-     * @return The processedData.
+     * <code>string result = 2;</code>
+     *
+     * @return The result.
      */
-    public java.lang.String getProcessedData() {
-      java.lang.Object ref = processedData_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        processedData_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
+    @java.lang.Override
+    public java.lang.String getResult() {
+        java.lang.Object ref = result_;
+        if (ref instanceof java.lang.String) {
+            return (java.lang.String) ref;
+        } else {
+            com.google.protobuf.ByteString bs =
+                    (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            result_ = s;
+            return s;
+        }
     }
+
     /**
      * <pre>
-     * 处理后数据（JSON格式）
+     * 处理结果
      * </pre>
      *
-     * <code>string processed_data = 2;</code>
-     * @return The bytes for processedData.
+     * <code>string result = 2;</code>
+     *
+     * @return The bytes for result.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
-        getProcessedDataBytes() {
-      java.lang.Object ref = processedData_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        processedData_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <pre>
-     * 处理后数据（JSON格式）
-     * </pre>
-     *
-     * <code>string processed_data = 2;</code>
-     * @param value The processedData to set.
-     * @return This builder for chaining.
-     */
-    public Builder setProcessedData(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
-      processedData_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * 处理后数据（JSON格式）
-     * </pre>
-     *
-     * <code>string processed_data = 2;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearProcessedData() {
-      
-      processedData_ = getDefaultInstance().getProcessedData();
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * 处理后数据（JSON格式）
-     * </pre>
-     *
-     * <code>string processed_data = 2;</code>
-     * @param value The bytes for processedData to set.
-     * @return This builder for chaining.
-     */
-    public Builder setProcessedDataBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
-      processedData_ = value;
-      onChanged();
-      return this;
+    getResultBytes() {
+        java.lang.Object ref = result_;
+        if (ref instanceof java.lang.String) {
+            com.google.protobuf.ByteString b =
+                    com.google.protobuf.ByteString.copyFromUtf8(
+                            (java.lang.String) ref);
+            result_ = b;
+            return b;
+        } else {
+            return (com.google.protobuf.ByteString) ref;
+        }
     }
 
-    private java.lang.Object errorMsg_ = "";
     /**
+     * <pre>
+     * 错误信息（失败时非空）
+     * </pre>
+     *
      * <code>string error_msg = 3;</code>
+     *
      * @return The errorMsg.
      */
+    @java.lang.Override
     public java.lang.String getErrorMsg() {
-      java.lang.Object ref = errorMsg_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        errorMsg_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
+        java.lang.Object ref = errorMsg_;
+        if (ref instanceof java.lang.String) {
+            return (java.lang.String) ref;
+        } else {
+            com.google.protobuf.ByteString bs =
+                    (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            errorMsg_ = s;
+            return s;
+        }
     }
+
     /**
+     * <pre>
+     * 错误信息（失败时非空）
+     * </pre>
+     *
      * <code>string error_msg = 3;</code>
+     *
      * @return The bytes for errorMsg.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
+    getErrorMsgBytes() {
+        java.lang.Object ref = errorMsg_;
+        if (ref instanceof java.lang.String) {
+            com.google.protobuf.ByteString b =
+                    com.google.protobuf.ByteString.copyFromUtf8(
+                            (java.lang.String) ref);
+            errorMsg_ = b;
+            return b;
+        } else {
+            return (com.google.protobuf.ByteString) ref;
+        }
+    }
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+            throws java.io.IOException {
+        if (success_ != false) {
+            output.writeBool(1, success_);
+        }
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(result_)) {
+            com.google.protobuf.GeneratedMessageV3.writeString(output, 2, result_);
+        }
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(errorMsg_)) {
+            com.google.protobuf.GeneratedMessageV3.writeString(output, 3, errorMsg_);
+        }
+        unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        if (success_ != false) {
+            size += com.google.protobuf.CodedOutputStream
+                    .computeBoolSize(1, success_);
+        }
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(result_)) {
+            size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, result_);
+        }
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(errorMsg_)) {
+            size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, errorMsg_);
+        }
+        size += unknownFields.getSerializedSize();
+        memoizedSize = size;
+        return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+            return true;
+        }
+        if (!(obj instanceof com.popcorn.agent.core.adapter.python.grpc.DataProcessResponse)) {
+            return super.equals(obj);
+        }
+        com.popcorn.agent.core.adapter.python.grpc.DataProcessResponse other = (com.popcorn.agent.core.adapter.python.grpc.DataProcessResponse) obj;
+
+        if (getSuccess()
+                != other.getSuccess()) return false;
+        if (!getResult()
+                .equals(other.getResult())) return false;
+        if (!getErrorMsg()
+                .equals(other.getErrorMsg())) return false;
+        if (!unknownFields.equals(other.unknownFields)) return false;
+        return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+        if (memoizedHashCode != 0) {
+            return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        hash = (37 * hash) + SUCCESS_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+                getSuccess());
+        hash = (37 * hash) + RESULT_FIELD_NUMBER;
+        hash = (53 * hash) + getResult().hashCode();
+        hash = (37 * hash) + ERROR_MSG_FIELD_NUMBER;
+        hash = (53 * hash) + getErrorMsg().hashCode();
+        hash = (29 * hash) + unknownFields.hashCode();
+        memoizedHashCode = hash;
+        return hash;
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+        return newBuilder();
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE
+                ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+            com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<DataProcessResponse> getParserForType() {
+        return PARSER;
+    }
+
+    @java.lang.Override
+    public com.popcorn.agent.core.adapter.python.grpc.DataProcessResponse getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+    }
+
+    /**
+     * <pre>
+     * 数据处理响应
+     * </pre>
+     * <p>
+     * Protobuf type {@code com.agent.adapter.python.DataProcessResponse}
+     */
+    public static final class Builder extends
+            com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+            // @@protoc_insertion_point(builder_implements:com.agent.adapter.python.DataProcessResponse)
+            com.popcorn.agent.core.adapter.python.grpc.DataProcessResponseOrBuilder {
+        private boolean success_;
+        private java.lang.Object result_ = "";
+        private java.lang.Object errorMsg_ = "";
+
+        // Construct using com.popcorn.agent.core.adapter.python.grpc.DataProcessResponse.newBuilder()
+        private Builder() {
+            maybeForceBuilderInitialization();
+        }
+
+        private Builder(
+                com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+            super(parent);
+            maybeForceBuilderInitialization();
+        }
+
+        public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+            return com.popcorn.agent.core.adapter.python.grpc.PythonAgentProto.internal_static_com_agent_adapter_python_DataProcessResponse_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+            return com.popcorn.agent.core.adapter.python.grpc.PythonAgentProto.internal_static_com_agent_adapter_python_DataProcessResponse_fieldAccessorTable
+                    .ensureFieldAccessorsInitialized(
+                            com.popcorn.agent.core.adapter.python.grpc.DataProcessResponse.class, com.popcorn.agent.core.adapter.python.grpc.DataProcessResponse.Builder.class);
+        }
+
+        private void maybeForceBuilderInitialization() {
+            if (com.google.protobuf.GeneratedMessageV3
+                    .alwaysUseFieldBuilders) {
+            }
+        }
+
+        @java.lang.Override
+        public Builder clear() {
+            super.clear();
+            success_ = false;
+
+            result_ = "";
+
+            errorMsg_ = "";
+
+            return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor
+        getDescriptorForType() {
+            return com.popcorn.agent.core.adapter.python.grpc.PythonAgentProto.internal_static_com_agent_adapter_python_DataProcessResponse_descriptor;
+        }
+
+        @java.lang.Override
+        public com.popcorn.agent.core.adapter.python.grpc.DataProcessResponse getDefaultInstanceForType() {
+            return com.popcorn.agent.core.adapter.python.grpc.DataProcessResponse.getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public com.popcorn.agent.core.adapter.python.grpc.DataProcessResponse build() {
+            com.popcorn.agent.core.adapter.python.grpc.DataProcessResponse result = buildPartial();
+            if (!result.isInitialized()) {
+                throw newUninitializedMessageException(result);
+            }
+            return result;
+        }
+
+        @java.lang.Override
+        public com.popcorn.agent.core.adapter.python.grpc.DataProcessResponse buildPartial() {
+            com.popcorn.agent.core.adapter.python.grpc.DataProcessResponse result = new com.popcorn.agent.core.adapter.python.grpc.DataProcessResponse(this);
+            result.success_ = success_;
+            result.result_ = result_;
+            result.errorMsg_ = errorMsg_;
+            onBuilt();
+            return result;
+        }
+
+        @java.lang.Override
+        public Builder clone() {
+            return super.clone();
+        }
+
+        @java.lang.Override
+        public Builder setField(
+                com.google.protobuf.Descriptors.FieldDescriptor field,
+                java.lang.Object value) {
+            return super.setField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder clearField(
+                com.google.protobuf.Descriptors.FieldDescriptor field) {
+            return super.clearField(field);
+        }
+
+        @java.lang.Override
+        public Builder clearOneof(
+                com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+            return super.clearOneof(oneof);
+        }
+
+        @java.lang.Override
+        public Builder setRepeatedField(
+                com.google.protobuf.Descriptors.FieldDescriptor field,
+                int index, java.lang.Object value) {
+            return super.setRepeatedField(field, index, value);
+        }
+
+        @java.lang.Override
+        public Builder addRepeatedField(
+                com.google.protobuf.Descriptors.FieldDescriptor field,
+                java.lang.Object value) {
+            return super.addRepeatedField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+            if (other instanceof com.popcorn.agent.core.adapter.python.grpc.DataProcessResponse) {
+                return mergeFrom((com.popcorn.agent.core.adapter.python.grpc.DataProcessResponse) other);
+            } else {
+                super.mergeFrom(other);
+                return this;
+            }
+        }
+
+        public Builder mergeFrom(com.popcorn.agent.core.adapter.python.grpc.DataProcessResponse other) {
+            if (other == com.popcorn.agent.core.adapter.python.grpc.DataProcessResponse.getDefaultInstance())
+                return this;
+            if (other.getSuccess() != false) {
+                setSuccess(other.getSuccess());
+            }
+            if (!other.getResult().isEmpty()) {
+                result_ = other.result_;
+                onChanged();
+            }
+            if (!other.getErrorMsg().isEmpty()) {
+                errorMsg_ = other.errorMsg_;
+                onChanged();
+            }
+            this.mergeUnknownFields(other.unknownFields);
+            onChanged();
+            return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+            return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+            com.popcorn.agent.core.adapter.python.grpc.DataProcessResponse parsedMessage = null;
+            try {
+                parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                parsedMessage = (com.popcorn.agent.core.adapter.python.grpc.DataProcessResponse) e.getUnfinishedMessage();
+                throw e.unwrapIOException();
+            } finally {
+                if (parsedMessage != null) {
+                    mergeFrom(parsedMessage);
+                }
+            }
+            return this;
+        }
+
+        /**
+         * <pre>
+         * 调用是否成功
+         * </pre>
+         *
+         * <code>bool success = 1;</code>
+         *
+         * @return The success.
+         */
+        @java.lang.Override
+        public boolean getSuccess() {
+            return success_;
+        }
+
+        /**
+         * <pre>
+         * 调用是否成功
+         * </pre>
+         *
+         * <code>bool success = 1;</code>
+         *
+         * @param value The success to set.
+         * @return This builder for chaining.
+         */
+        public Builder setSuccess(boolean value) {
+
+            success_ = value;
+            onChanged();
+            return this;
+        }
+
+        /**
+         * <pre>
+         * 调用是否成功
+         * </pre>
+         *
+         * <code>bool success = 1;</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearSuccess() {
+
+            success_ = false;
+            onChanged();
+            return this;
+        }
+
+        /**
+         * <pre>
+         * 处理结果
+         * </pre>
+         *
+         * <code>string result = 2;</code>
+         *
+         * @return The result.
+         */
+        public java.lang.String getResult() {
+            java.lang.Object ref = result_;
+            if (!(ref instanceof java.lang.String)) {
+                com.google.protobuf.ByteString bs =
+                        (com.google.protobuf.ByteString) ref;
+                java.lang.String s = bs.toStringUtf8();
+                result_ = s;
+                return s;
+            } else {
+                return (java.lang.String) ref;
+            }
+        }
+
+        /**
+         * <pre>
+         * 处理结果
+         * </pre>
+         *
+         * <code>string result = 2;</code>
+         *
+         * @param value The result to set.
+         * @return This builder for chaining.
+         */
+        public Builder setResult(
+                java.lang.String value) {
+            if (value == null) {
+                throw new NullPointerException();
+            }
+
+            result_ = value;
+            onChanged();
+            return this;
+        }
+
+        /**
+         * <pre>
+         * 处理结果
+         * </pre>
+         *
+         * <code>string result = 2;</code>
+         *
+         * @return The bytes for result.
+         */
+        public com.google.protobuf.ByteString
+        getResultBytes() {
+            java.lang.Object ref = result_;
+            if (ref instanceof String) {
+                com.google.protobuf.ByteString b =
+                        com.google.protobuf.ByteString.copyFromUtf8(
+                                (java.lang.String) ref);
+                result_ = b;
+                return b;
+            } else {
+                return (com.google.protobuf.ByteString) ref;
+            }
+        }
+
+        /**
+         * <pre>
+         * 处理结果
+         * </pre>
+         *
+         * <code>string result = 2;</code>
+         *
+         * @param value The bytes for result to set.
+         * @return This builder for chaining.
+         */
+        public Builder setResultBytes(
+                com.google.protobuf.ByteString value) {
+            if (value == null) {
+                throw new NullPointerException();
+            }
+            checkByteStringIsUtf8(value);
+
+            result_ = value;
+            onChanged();
+            return this;
+        }
+
+        /**
+         * <pre>
+         * 处理结果
+         * </pre>
+         *
+         * <code>string result = 2;</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearResult() {
+
+            result_ = getDefaultInstance().getResult();
+            onChanged();
+            return this;
+        }
+
+        /**
+         * <pre>
+         * 错误信息（失败时非空）
+         * </pre>
+         *
+         * <code>string error_msg = 3;</code>
+         *
+         * @return The errorMsg.
+         */
+        public java.lang.String getErrorMsg() {
+            java.lang.Object ref = errorMsg_;
+            if (!(ref instanceof java.lang.String)) {
+                com.google.protobuf.ByteString bs =
+                        (com.google.protobuf.ByteString) ref;
+                java.lang.String s = bs.toStringUtf8();
+                errorMsg_ = s;
+                return s;
+            } else {
+                return (java.lang.String) ref;
+            }
+        }
+
+        /**
+         * <pre>
+         * 错误信息（失败时非空）
+         * </pre>
+         *
+         * <code>string error_msg = 3;</code>
+         *
+         * @param value The errorMsg to set.
+         * @return This builder for chaining.
+         */
+        public Builder setErrorMsg(
+                java.lang.String value) {
+            if (value == null) {
+                throw new NullPointerException();
+            }
+
+            errorMsg_ = value;
+            onChanged();
+            return this;
+        }
+
+        /**
+         * <pre>
+         * 错误信息（失败时非空）
+         * </pre>
+         *
+         * <code>string error_msg = 3;</code>
+         *
+         * @return The bytes for errorMsg.
+         */
+        public com.google.protobuf.ByteString
         getErrorMsgBytes() {
-      java.lang.Object ref = errorMsg_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        errorMsg_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <code>string error_msg = 3;</code>
-     * @param value The errorMsg to set.
-     * @return This builder for chaining.
-     */
-    public Builder setErrorMsg(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
-      errorMsg_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string error_msg = 3;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearErrorMsg() {
-      
-      errorMsg_ = getDefaultInstance().getErrorMsg();
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string error_msg = 3;</code>
-     * @param value The bytes for errorMsg to set.
-     * @return This builder for chaining.
-     */
-    public Builder setErrorMsgBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
-      errorMsg_ = value;
-      onChanged();
-      return this;
-    }
+            java.lang.Object ref = errorMsg_;
+            if (ref instanceof String) {
+                com.google.protobuf.ByteString b =
+                        com.google.protobuf.ByteString.copyFromUtf8(
+                                (java.lang.String) ref);
+                errorMsg_ = b;
+                return b;
+            } else {
+                return (com.google.protobuf.ByteString) ref;
+            }
+        }
 
-    private long costTime_ ;
-    /**
-     * <code>int64 cost_time = 4;</code>
-     * @return The costTime.
-     */
-    @java.lang.Override
-    public long getCostTime() {
-      return costTime_;
-    }
-    /**
-     * <code>int64 cost_time = 4;</code>
-     * @param value The costTime to set.
-     * @return This builder for chaining.
-     */
-    public Builder setCostTime(long value) {
-      
-      costTime_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>int64 cost_time = 4;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearCostTime() {
-      
-      costTime_ = 0L;
-      onChanged();
-      return this;
-    }
-    @java.lang.Override
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFields(unknownFields);
-    }
+        /**
+         * <pre>
+         * 错误信息（失败时非空）
+         * </pre>
+         *
+         * <code>string error_msg = 3;</code>
+         *
+         * @param value The bytes for errorMsg to set.
+         * @return This builder for chaining.
+         */
+        public Builder setErrorMsgBytes(
+                com.google.protobuf.ByteString value) {
+            if (value == null) {
+                throw new NullPointerException();
+            }
+            checkByteStringIsUtf8(value);
 
-    @java.lang.Override
-    public final Builder mergeUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.mergeUnknownFields(unknownFields);
-    }
+            errorMsg_ = value;
+            onChanged();
+            return this;
+        }
+
+        /**
+         * <pre>
+         * 错误信息（失败时非空）
+         * </pre>
+         *
+         * <code>string error_msg = 3;</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearErrorMsg() {
+
+            errorMsg_ = getDefaultInstance().getErrorMsg();
+            onChanged();
+            return this;
+        }
+
+        @java.lang.Override
+        public final Builder setUnknownFields(
+                final com.google.protobuf.UnknownFieldSet unknownFields) {
+            return super.setUnknownFields(unknownFields);
+        }
+
+        @java.lang.Override
+        public final Builder mergeUnknownFields(
+                final com.google.protobuf.UnknownFieldSet unknownFields) {
+            return super.mergeUnknownFields(unknownFields);
+        }
 
 
-    // @@protoc_insertion_point(builder_scope:com.agent.adapter.python.DataProcessResponse)
-  }
-
-  // @@protoc_insertion_point(class_scope:com.agent.adapter.python.DataProcessResponse)
-  private static final com.popcorn.agent.core.adapter.python.grpc.DataProcessResponse DEFAULT_INSTANCE;
-  static {
-    DEFAULT_INSTANCE = new com.popcorn.agent.core.adapter.python.grpc.DataProcessResponse();
-  }
-
-  public static com.popcorn.agent.core.adapter.python.grpc.DataProcessResponse getDefaultInstance() {
-    return DEFAULT_INSTANCE;
-  }
-
-  private static final com.google.protobuf.Parser<DataProcessResponse>
-      PARSER = new com.google.protobuf.AbstractParser<DataProcessResponse>() {
-    @java.lang.Override
-    public DataProcessResponse parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return new DataProcessResponse(input, extensionRegistry);
+        // @@protoc_insertion_point(builder_scope:com.agent.adapter.python.DataProcessResponse)
     }
-  };
-
-  public static com.google.protobuf.Parser<DataProcessResponse> parser() {
-    return PARSER;
-  }
-
-  @java.lang.Override
-  public com.google.protobuf.Parser<DataProcessResponse> getParserForType() {
-    return PARSER;
-  }
-
-  @java.lang.Override
-  public com.popcorn.agent.core.adapter.python.grpc.DataProcessResponse getDefaultInstanceForType() {
-    return DEFAULT_INSTANCE;
-  }
 
 }
 

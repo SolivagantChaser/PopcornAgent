@@ -4,66 +4,63 @@
 package com.popcorn.agent.core.adapter.python.grpc;
 
 public interface LlmInferResponseOrBuilder extends
-    // @@protoc_insertion_point(interface_extends:com.agent.adapter.python.LlmInferResponse)
-    com.google.protobuf.MessageOrBuilder {
+        // @@protoc_insertion_point(interface_extends:com.agent.adapter.python.LlmInferResponse)
+        com.google.protobuf.MessageOrBuilder {
 
-  /**
-   * <pre>
-   * 是否成功
-   * </pre>
-   *
-   * <code>bool success = 1;</code>
-   * @return The success.
-   */
-  boolean getSuccess();
+    /**
+     * <pre>
+     * 调用是否成功
+     * </pre>
+     *
+     * <code>bool success = 1;</code>
+     *
+     * @return The success.
+     */
+    boolean getSuccess();
 
-  /**
-   * <pre>
-   * 推理结果
-   * </pre>
-   *
-   * <code>string result = 2;</code>
-   * @return The result.
-   */
-  java.lang.String getResult();
-  /**
-   * <pre>
-   * 推理结果
-   * </pre>
-   *
-   * <code>string result = 2;</code>
-   * @return The bytes for result.
-   */
-  com.google.protobuf.ByteString
-      getResultBytes();
+    /**
+     * <pre>
+     * 推理结果
+     * </pre>
+     *
+     * <code>string result = 2;</code>
+     *
+     * @return The result.
+     */
+    java.lang.String getResult();
 
-  /**
-   * <pre>
-   * 错误信息（失败时非空）
-   * </pre>
-   *
-   * <code>string error_msg = 3;</code>
-   * @return The errorMsg.
-   */
-  java.lang.String getErrorMsg();
-  /**
-   * <pre>
-   * 错误信息（失败时非空）
-   * </pre>
-   *
-   * <code>string error_msg = 3;</code>
-   * @return The bytes for errorMsg.
-   */
-  com.google.protobuf.ByteString
-      getErrorMsgBytes();
+    /**
+     * <pre>
+     * 推理结果
+     * </pre>
+     *
+     * <code>string result = 2;</code>
+     *
+     * @return The bytes for result.
+     */
+    com.google.protobuf.ByteString
+    getResultBytes();
 
-  /**
-   * <pre>
-   * 耗时（毫秒）
-   * </pre>
-   *
-   * <code>int64 cost_time = 4;</code>
-   * @return The costTime.
-   */
-  long getCostTime();
+    /**
+     * <pre>
+     * 错误信息（失败时非空）
+     * </pre>
+     *
+     * <code>string error_msg = 3;</code>
+     *
+     * @return The errorMsg.
+     */
+    java.lang.String getErrorMsg();
+
+    /**
+     * <pre>
+     * 错误信息（失败时非空）
+     * </pre>
+     *
+     * <code>string error_msg = 3;</code>
+     *
+     * @return The bytes for errorMsg.
+     */
+    com.google.protobuf.ByteString
+    getErrorMsgBytes();
 }

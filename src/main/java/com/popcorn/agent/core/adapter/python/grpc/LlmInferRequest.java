@@ -5,909 +5,362 @@ package com.popcorn.agent.core.adapter.python.grpc;
 
 /**
  * <pre>
- * AI推理请求
+ * LLM推理请求
  * </pre>
- *
+ * <p>
  * Protobuf type {@code com.agent.adapter.python.LlmInferRequest}
  */
 public final class LlmInferRequest extends
-    com.google.protobuf.GeneratedMessageV3 implements
-    // @@protoc_insertion_point(message_implements:com.agent.adapter.python.LlmInferRequest)
-    LlmInferRequestOrBuilder {
-private static final long serialVersionUID = 0L;
-  // Use LlmInferRequest.newBuilder() to construct.
-  private LlmInferRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-    super(builder);
-  }
-  private LlmInferRequest() {
-    prompt_ = "";
-    model_ = "";
-  }
-
-  @java.lang.Override
-  @SuppressWarnings({"unused"})
-  protected java.lang.Object newInstance(
-      UnusedPrivateParameter unused) {
-    return new LlmInferRequest();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
-    return this.unknownFields;
-  }
-  private LlmInferRequest(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    int mutable_bitField0_ = 0;
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            prompt_ = s;
-            break;
-          }
-          case 18: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            model_ = s;
-            break;
-          }
-          case 26: {
-            if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-              parameters_ = com.google.protobuf.MapField.newMapField(
-                  ParametersDefaultEntryHolder.defaultEntry);
-              mutable_bitField0_ |= 0x00000001;
-            }
-            com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
-            parameters__ = input.readMessage(
-                ParametersDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-            parameters_.getMutableMap().put(
-                parameters__.getKey(), parameters__.getValue());
-            break;
-          }
-          default: {
-            if (!parseUnknownField(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
-            }
-            break;
-          }
+        com.google.protobuf.GeneratedMessageV3 implements
+        // @@protoc_insertion_point(message_implements:com.agent.adapter.python.LlmInferRequest)
+        LlmInferRequestOrBuilder {
+    public static final int PROMPT_FIELD_NUMBER = 1;
+    public static final int MODEL_FIELD_NUMBER = 2;
+    public static final int PARAMETERS_FIELD_NUMBER = 3;
+    private static final long serialVersionUID = 0L;
+    // @@protoc_insertion_point(class_scope:com.agent.adapter.python.LlmInferRequest)
+    private static final com.popcorn.agent.core.adapter.python.grpc.LlmInferRequest DEFAULT_INSTANCE;
+    private static final com.google.protobuf.Parser<LlmInferRequest>
+            PARSER = new com.google.protobuf.AbstractParser<LlmInferRequest>() {
+        @java.lang.Override
+        public LlmInferRequest parsePartialFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return new LlmInferRequest(input, extensionRegistry);
         }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
-    } finally {
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
+    };
+
+    static {
+        DEFAULT_INSTANCE = new com.popcorn.agent.core.adapter.python.grpc.LlmInferRequest();
     }
-  }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-    return com.popcorn.agent.core.adapter.python.grpc.PythonAgentProto.internal_static_com_agent_adapter_python_LlmInferRequest_descriptor;
-  }
 
-  @SuppressWarnings({"rawtypes"})
-  @java.lang.Override
-  protected com.google.protobuf.MapField internalGetMapField(
-      int number) {
-    switch (number) {
-      case 3:
-        return internalGetParameters();
-      default:
-        throw new RuntimeException(
-            "Invalid map field number: " + number);
+    private volatile java.lang.Object prompt_;
+    private volatile java.lang.Object model_;
+    private com.google.protobuf.MapField<
+            java.lang.String, java.lang.String> parameters_;
+    private byte memoizedIsInitialized = -1;
+
+    // Use LlmInferRequest.newBuilder() to construct.
+    private LlmInferRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+        super(builder);
     }
-  }
-  @java.lang.Override
-  protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internalGetFieldAccessorTable() {
-    return com.popcorn.agent.core.adapter.python.grpc.PythonAgentProto.internal_static_com_agent_adapter_python_LlmInferRequest_fieldAccessorTable
-        .ensureFieldAccessorsInitialized(
-            com.popcorn.agent.core.adapter.python.grpc.LlmInferRequest.class, com.popcorn.agent.core.adapter.python.grpc.LlmInferRequest.Builder.class);
-  }
 
-  public static final int PROMPT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object prompt_;
-  /**
-   * <pre>
-   * 提示词
-   * </pre>
-   *
-   * <code>string prompt = 1;</code>
-   * @return The prompt.
-   */
-  @java.lang.Override
-  public java.lang.String getPrompt() {
-    java.lang.Object ref = prompt_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      prompt_ = s;
-      return s;
+    private LlmInferRequest() {
+        prompt_ = "";
+        model_ = "";
     }
-  }
-  /**
-   * <pre>
-   * 提示词
-   * </pre>
-   *
-   * <code>string prompt = 1;</code>
-   * @return The bytes for prompt.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString
-      getPromptBytes() {
-    java.lang.Object ref = prompt_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      prompt_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
+
+    private LlmInferRequest(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+        this();
+        if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+        }
+        int mutable_bitField0_ = 0;
+        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+                com.google.protobuf.UnknownFieldSet.newBuilder();
+        try {
+            boolean done = false;
+            while (!done) {
+                int tag = input.readTag();
+                switch (tag) {
+                    case 0:
+                        done = true;
+                        break;
+                    case 10: {
+                        java.lang.String s = input.readStringRequireUtf8();
+
+                        prompt_ = s;
+                        break;
+                    }
+                    case 18: {
+                        java.lang.String s = input.readStringRequireUtf8();
+
+                        model_ = s;
+                        break;
+                    }
+                    case 26: {
+                        if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                            parameters_ = com.google.protobuf.MapField.newMapField(
+                                    ParametersDefaultEntryHolder.defaultEntry);
+                            mutable_bitField0_ |= 0x00000001;
+                        }
+                        com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
+                                parameters__ = input.readMessage(
+                                ParametersDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+                        parameters_.getMutableMap().put(
+                                parameters__.getKey(), parameters__.getValue());
+                        break;
+                    }
+                    default: {
+                        if (!parseUnknownField(
+                                input, unknownFields, extensionRegistry, tag)) {
+                            done = true;
+                        }
+                        break;
+                    }
+                }
+            }
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(this);
+        } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(
+                    e).setUnfinishedMessage(this);
+        } finally {
+            this.unknownFields = unknownFields.build();
+            makeExtensionsImmutable();
+        }
     }
-  }
 
-  public static final int MODEL_FIELD_NUMBER = 2;
-  private volatile java.lang.Object model_;
-  /**
-   * <pre>
-   * 模型名称（如gpt-3.5-turbo）
-   * </pre>
-   *
-   * <code>string model = 2;</code>
-   * @return The model.
-   */
-  @java.lang.Override
-  public java.lang.String getModel() {
-    java.lang.Object ref = model_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      model_ = s;
-      return s;
-    }
-  }
-  /**
-   * <pre>
-   * 模型名称（如gpt-3.5-turbo）
-   * </pre>
-   *
-   * <code>string model = 2;</code>
-   * @return The bytes for model.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString
-      getModelBytes() {
-    java.lang.Object ref = model_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      model_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
-  public static final int PARAMETERS_FIELD_NUMBER = 3;
-  private static final class ParametersDefaultEntryHolder {
-    static final com.google.protobuf.MapEntry<
-        java.lang.String, java.lang.String> defaultEntry =
-            com.google.protobuf.MapEntry
-            .<java.lang.String, java.lang.String>newDefaultInstance(
-                com.popcorn.agent.core.adapter.python.grpc.PythonAgentProto.internal_static_com_agent_adapter_python_LlmInferRequest_ParametersEntry_descriptor, 
-                com.google.protobuf.WireFormat.FieldType.STRING,
-                "",
-                com.google.protobuf.WireFormat.FieldType.STRING,
-                "");
-  }
-  private com.google.protobuf.MapField<
-      java.lang.String, java.lang.String> parameters_;
-  private com.google.protobuf.MapField<java.lang.String, java.lang.String>
-  internalGetParameters() {
-    if (parameters_ == null) {
-      return com.google.protobuf.MapField.emptyMapField(
-          ParametersDefaultEntryHolder.defaultEntry);
-    }
-    return parameters_;
-  }
-
-  public int getParametersCount() {
-    return internalGetParameters().getMap().size();
-  }
-  /**
-   * <pre>
-   * 推理参数（temperature/max_tokens）
-   * </pre>
-   *
-   * <code>map&lt;string, string&gt; parameters = 3;</code>
-   */
-
-  @java.lang.Override
-  public boolean containsParameters(
-      java.lang.String key) {
-    if (key == null) { throw new NullPointerException("map key"); }
-    return internalGetParameters().getMap().containsKey(key);
-  }
-  /**
-   * Use {@link #getParametersMap()} instead.
-   */
-  @java.lang.Override
-  @java.lang.Deprecated
-  public java.util.Map<java.lang.String, java.lang.String> getParameters() {
-    return getParametersMap();
-  }
-  /**
-   * <pre>
-   * 推理参数（temperature/max_tokens）
-   * </pre>
-   *
-   * <code>map&lt;string, string&gt; parameters = 3;</code>
-   */
-  @java.lang.Override
-
-  public java.util.Map<java.lang.String, java.lang.String> getParametersMap() {
-    return internalGetParameters().getMap();
-  }
-  /**
-   * <pre>
-   * 推理参数（temperature/max_tokens）
-   * </pre>
-   *
-   * <code>map&lt;string, string&gt; parameters = 3;</code>
-   */
-  @java.lang.Override
-
-  public java.lang.String getParametersOrDefault(
-      java.lang.String key,
-      java.lang.String defaultValue) {
-    if (key == null) { throw new NullPointerException("map key"); }
-    java.util.Map<java.lang.String, java.lang.String> map =
-        internalGetParameters().getMap();
-    return map.containsKey(key) ? map.get(key) : defaultValue;
-  }
-  /**
-   * <pre>
-   * 推理参数（temperature/max_tokens）
-   * </pre>
-   *
-   * <code>map&lt;string, string&gt; parameters = 3;</code>
-   */
-  @java.lang.Override
-
-  public java.lang.String getParametersOrThrow(
-      java.lang.String key) {
-    if (key == null) { throw new NullPointerException("map key"); }
-    java.util.Map<java.lang.String, java.lang.String> map =
-        internalGetParameters().getMap();
-    if (!map.containsKey(key)) {
-      throw new java.lang.IllegalArgumentException();
-    }
-    return map.get(key);
-  }
-
-  private byte memoizedIsInitialized = -1;
-  @java.lang.Override
-  public final boolean isInitialized() {
-    byte isInitialized = memoizedIsInitialized;
-    if (isInitialized == 1) return true;
-    if (isInitialized == 0) return false;
-
-    memoizedIsInitialized = 1;
-    return true;
-  }
-
-  @java.lang.Override
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(prompt_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, prompt_);
-    }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(model_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, model_);
-    }
-    com.google.protobuf.GeneratedMessageV3
-      .serializeStringMapTo(
-        output,
-        internalGetParameters(),
-        ParametersDefaultEntryHolder.defaultEntry,
-        3);
-    unknownFields.writeTo(output);
-  }
-
-  @java.lang.Override
-  public int getSerializedSize() {
-    int size = memoizedSize;
-    if (size != -1) return size;
-
-    size = 0;
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(prompt_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, prompt_);
-    }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(model_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, model_);
-    }
-    for (java.util.Map.Entry<java.lang.String, java.lang.String> entry
-         : internalGetParameters().getMap().entrySet()) {
-      com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
-      parameters__ = ParametersDefaultEntryHolder.defaultEntry.newBuilderForType()
-          .setKey(entry.getKey())
-          .setValue(entry.getValue())
-          .build();
-      size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(3, parameters__);
-    }
-    size += unknownFields.getSerializedSize();
-    memoizedSize = size;
-    return size;
-  }
-
-  @java.lang.Override
-  public boolean equals(final java.lang.Object obj) {
-    if (obj == this) {
-     return true;
-    }
-    if (!(obj instanceof com.popcorn.agent.core.adapter.python.grpc.LlmInferRequest)) {
-      return super.equals(obj);
-    }
-    com.popcorn.agent.core.adapter.python.grpc.LlmInferRequest other = (com.popcorn.agent.core.adapter.python.grpc.LlmInferRequest) obj;
-
-    if (!getPrompt()
-        .equals(other.getPrompt())) return false;
-    if (!getModel()
-        .equals(other.getModel())) return false;
-    if (!internalGetParameters().equals(
-        other.internalGetParameters())) return false;
-    if (!unknownFields.equals(other.unknownFields)) return false;
-    return true;
-  }
-
-  @java.lang.Override
-  public int hashCode() {
-    if (memoizedHashCode != 0) {
-      return memoizedHashCode;
-    }
-    int hash = 41;
-    hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + PROMPT_FIELD_NUMBER;
-    hash = (53 * hash) + getPrompt().hashCode();
-    hash = (37 * hash) + MODEL_FIELD_NUMBER;
-    hash = (53 * hash) + getModel().hashCode();
-    if (!internalGetParameters().getMap().isEmpty()) {
-      hash = (37 * hash) + PARAMETERS_FIELD_NUMBER;
-      hash = (53 * hash) + internalGetParameters().hashCode();
-    }
-    hash = (29 * hash) + unknownFields.hashCode();
-    memoizedHashCode = hash;
-    return hash;
-  }
-
-  public static com.popcorn.agent.core.adapter.python.grpc.LlmInferRequest parseFrom(
-      java.nio.ByteBuffer data)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    return PARSER.parseFrom(data);
-  }
-  public static com.popcorn.agent.core.adapter.python.grpc.LlmInferRequest parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    return PARSER.parseFrom(data, extensionRegistry);
-  }
-  public static com.popcorn.agent.core.adapter.python.grpc.LlmInferRequest parseFrom(
-      com.google.protobuf.ByteString data)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    return PARSER.parseFrom(data);
-  }
-  public static com.popcorn.agent.core.adapter.python.grpc.LlmInferRequest parseFrom(
-      com.google.protobuf.ByteString data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    return PARSER.parseFrom(data, extensionRegistry);
-  }
-  public static com.popcorn.agent.core.adapter.python.grpc.LlmInferRequest parseFrom(byte[] data)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    return PARSER.parseFrom(data);
-  }
-  public static com.popcorn.agent.core.adapter.python.grpc.LlmInferRequest parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    return PARSER.parseFrom(data, extensionRegistry);
-  }
-  public static com.popcorn.agent.core.adapter.python.grpc.LlmInferRequest parseFrom(java.io.InputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
-  }
-  public static com.popcorn.agent.core.adapter.python.grpc.LlmInferRequest parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
-  }
-  public static com.popcorn.agent.core.adapter.python.grpc.LlmInferRequest parseDelimitedFrom(java.io.InputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
-  }
-  public static com.popcorn.agent.core.adapter.python.grpc.LlmInferRequest parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-  }
-  public static com.popcorn.agent.core.adapter.python.grpc.LlmInferRequest parseFrom(
-      com.google.protobuf.CodedInputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
-  }
-  public static com.popcorn.agent.core.adapter.python.grpc.LlmInferRequest parseFrom(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
-  }
-
-  @java.lang.Override
-  public Builder newBuilderForType() { return newBuilder(); }
-  public static Builder newBuilder() {
-    return DEFAULT_INSTANCE.toBuilder();
-  }
-  public static Builder newBuilder(com.popcorn.agent.core.adapter.python.grpc.LlmInferRequest prototype) {
-    return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-  }
-  @java.lang.Override
-  public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
-  }
-
-  @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-    Builder builder = new Builder(parent);
-    return builder;
-  }
-  /**
-   * <pre>
-   * AI推理请求
-   * </pre>
-   *
-   * Protobuf type {@code com.agent.adapter.python.LlmInferRequest}
-   */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:com.agent.adapter.python.LlmInferRequest)
-      com.popcorn.agent.core.adapter.python.grpc.LlmInferRequestOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.popcorn.agent.core.adapter.python.grpc.PythonAgentProto.internal_static_com_agent_adapter_python_LlmInferRequest_descriptor;
+    getDescriptor() {
+        return com.popcorn.agent.core.adapter.python.grpc.PythonAgentProto.internal_static_com_agent_adapter_python_LlmInferRequest_descriptor;
+    }
+
+    public static com.popcorn.agent.core.adapter.python.grpc.LlmInferRequest parseFrom(
+            java.nio.ByteBuffer data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+    }
+
+    public static com.popcorn.agent.core.adapter.python.grpc.LlmInferRequest parseFrom(
+            java.nio.ByteBuffer data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.popcorn.agent.core.adapter.python.grpc.LlmInferRequest parseFrom(
+            com.google.protobuf.ByteString data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+    }
+
+    public static com.popcorn.agent.core.adapter.python.grpc.LlmInferRequest parseFrom(
+            com.google.protobuf.ByteString data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.popcorn.agent.core.adapter.python.grpc.LlmInferRequest parseFrom(byte[] data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+    }
+
+    public static com.popcorn.agent.core.adapter.python.grpc.LlmInferRequest parseFrom(
+            byte[] data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.popcorn.agent.core.adapter.python.grpc.LlmInferRequest parseFrom(java.io.InputStream input)
+            throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+                .parseWithIOException(PARSER, input);
+    }
+
+    public static com.popcorn.agent.core.adapter.python.grpc.LlmInferRequest parseFrom(
+            java.io.InputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+                .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public static com.popcorn.agent.core.adapter.python.grpc.LlmInferRequest parseDelimitedFrom(java.io.InputStream input)
+            throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+                .parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.popcorn.agent.core.adapter.python.grpc.LlmInferRequest parseDelimitedFrom(
+            java.io.InputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+                .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public static com.popcorn.agent.core.adapter.python.grpc.LlmInferRequest parseFrom(
+            com.google.protobuf.CodedInputStream input)
+            throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+                .parseWithIOException(PARSER, input);
+    }
+
+    public static com.popcorn.agent.core.adapter.python.grpc.LlmInferRequest parseFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+                .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(com.popcorn.agent.core.adapter.python.grpc.LlmInferRequest prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    public static com.popcorn.agent.core.adapter.python.grpc.LlmInferRequest getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+    }
+
+    public static com.google.protobuf.Parser<LlmInferRequest> parser() {
+        return PARSER;
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+            UnusedPrivateParameter unused) {
+        return new LlmInferRequest();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+        return this.unknownFields;
     }
 
     @SuppressWarnings({"rawtypes"})
+    @java.lang.Override
     protected com.google.protobuf.MapField internalGetMapField(
-        int number) {
-      switch (number) {
-        case 3:
-          return internalGetParameters();
-        default:
-          throw new RuntimeException(
-              "Invalid map field number: " + number);
-      }
+            int number) {
+        switch (number) {
+            case 3:
+                return internalGetParameters();
+            default:
+                throw new RuntimeException(
+                        "Invalid map field number: " + number);
+        }
     }
-    @SuppressWarnings({"rawtypes"})
-    protected com.google.protobuf.MapField internalGetMutableMapField(
-        int number) {
-      switch (number) {
-        case 3:
-          return internalGetMutableParameters();
-        default:
-          throw new RuntimeException(
-              "Invalid map field number: " + number);
-      }
-    }
+
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return com.popcorn.agent.core.adapter.python.grpc.PythonAgentProto.internal_static_com_agent_adapter_python_LlmInferRequest_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              com.popcorn.agent.core.adapter.python.grpc.LlmInferRequest.class, com.popcorn.agent.core.adapter.python.grpc.LlmInferRequest.Builder.class);
+    internalGetFieldAccessorTable() {
+        return com.popcorn.agent.core.adapter.python.grpc.PythonAgentProto.internal_static_com_agent_adapter_python_LlmInferRequest_fieldAccessorTable
+                .ensureFieldAccessorsInitialized(
+                        com.popcorn.agent.core.adapter.python.grpc.LlmInferRequest.class, com.popcorn.agent.core.adapter.python.grpc.LlmInferRequest.Builder.class);
     }
 
-    // Construct using com.popcorn.agent.core.adapter.python.grpc.LlmInferRequest.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
-
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      super(parent);
-      maybeForceBuilderInitialization();
-    }
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
-      }
-    }
-    @java.lang.Override
-    public Builder clear() {
-      super.clear();
-      prompt_ = "";
-
-      model_ = "";
-
-      internalGetMutableParameters().clear();
-      return this;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return com.popcorn.agent.core.adapter.python.grpc.PythonAgentProto.internal_static_com_agent_adapter_python_LlmInferRequest_descriptor;
-    }
-
-    @java.lang.Override
-    public com.popcorn.agent.core.adapter.python.grpc.LlmInferRequest getDefaultInstanceForType() {
-      return com.popcorn.agent.core.adapter.python.grpc.LlmInferRequest.getDefaultInstance();
-    }
-
-    @java.lang.Override
-    public com.popcorn.agent.core.adapter.python.grpc.LlmInferRequest build() {
-      com.popcorn.agent.core.adapter.python.grpc.LlmInferRequest result = buildPartial();
-      if (!result.isInitialized()) {
-        throw newUninitializedMessageException(result);
-      }
-      return result;
-    }
-
-    @java.lang.Override
-    public com.popcorn.agent.core.adapter.python.grpc.LlmInferRequest buildPartial() {
-      com.popcorn.agent.core.adapter.python.grpc.LlmInferRequest result = new com.popcorn.agent.core.adapter.python.grpc.LlmInferRequest(this);
-      int from_bitField0_ = bitField0_;
-      result.prompt_ = prompt_;
-      result.model_ = model_;
-      result.parameters_ = internalGetParameters();
-      result.parameters_.makeImmutable();
-      onBuilt();
-      return result;
-    }
-
-    @java.lang.Override
-    public Builder clone() {
-      return super.clone();
-    }
-    @java.lang.Override
-    public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
-      return super.setField(field, value);
-    }
-    @java.lang.Override
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return super.clearField(field);
-    }
-    @java.lang.Override
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return super.clearOneof(oneof);
-    }
-    @java.lang.Override
-    public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
-      return super.setRepeatedField(field, index, value);
-    }
-    @java.lang.Override
-    public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
-      return super.addRepeatedField(field, value);
-    }
-    @java.lang.Override
-    public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof com.popcorn.agent.core.adapter.python.grpc.LlmInferRequest) {
-        return mergeFrom((com.popcorn.agent.core.adapter.python.grpc.LlmInferRequest)other);
-      } else {
-        super.mergeFrom(other);
-        return this;
-      }
-    }
-
-    public Builder mergeFrom(com.popcorn.agent.core.adapter.python.grpc.LlmInferRequest other) {
-      if (other == com.popcorn.agent.core.adapter.python.grpc.LlmInferRequest.getDefaultInstance()) return this;
-      if (!other.getPrompt().isEmpty()) {
-        prompt_ = other.prompt_;
-        onChanged();
-      }
-      if (!other.getModel().isEmpty()) {
-        model_ = other.model_;
-        onChanged();
-      }
-      internalGetMutableParameters().mergeFrom(
-          other.internalGetParameters());
-      this.mergeUnknownFields(other.unknownFields);
-      onChanged();
-      return this;
-    }
-
-    @java.lang.Override
-    public final boolean isInitialized() {
-      return true;
-    }
-
-    @java.lang.Override
-    public Builder mergeFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      com.popcorn.agent.core.adapter.python.grpc.LlmInferRequest parsedMessage = null;
-      try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.popcorn.agent.core.adapter.python.grpc.LlmInferRequest) e.getUnfinishedMessage();
-        throw e.unwrapIOException();
-      } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
-      return this;
-    }
-    private int bitField0_;
-
-    private java.lang.Object prompt_ = "";
     /**
      * <pre>
-     * 提示词
+     * 推理提示词
      * </pre>
      *
      * <code>string prompt = 1;</code>
+     *
      * @return The prompt.
      */
+    @java.lang.Override
     public java.lang.String getPrompt() {
-      java.lang.Object ref = prompt_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        prompt_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
+        java.lang.Object ref = prompt_;
+        if (ref instanceof java.lang.String) {
+            return (java.lang.String) ref;
+        } else {
+            com.google.protobuf.ByteString bs =
+                    (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            prompt_ = s;
+            return s;
+        }
     }
+
     /**
      * <pre>
-     * 提示词
+     * 推理提示词
      * </pre>
      *
      * <code>string prompt = 1;</code>
+     *
      * @return The bytes for prompt.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
-        getPromptBytes() {
-      java.lang.Object ref = prompt_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        prompt_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <pre>
-     * 提示词
-     * </pre>
-     *
-     * <code>string prompt = 1;</code>
-     * @param value The prompt to set.
-     * @return This builder for chaining.
-     */
-    public Builder setPrompt(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
-      prompt_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * 提示词
-     * </pre>
-     *
-     * <code>string prompt = 1;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearPrompt() {
-      
-      prompt_ = getDefaultInstance().getPrompt();
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * 提示词
-     * </pre>
-     *
-     * <code>string prompt = 1;</code>
-     * @param value The bytes for prompt to set.
-     * @return This builder for chaining.
-     */
-    public Builder setPromptBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
-      prompt_ = value;
-      onChanged();
-      return this;
+    getPromptBytes() {
+        java.lang.Object ref = prompt_;
+        if (ref instanceof java.lang.String) {
+            com.google.protobuf.ByteString b =
+                    com.google.protobuf.ByteString.copyFromUtf8(
+                            (java.lang.String) ref);
+            prompt_ = b;
+            return b;
+        } else {
+            return (com.google.protobuf.ByteString) ref;
+        }
     }
 
-    private java.lang.Object model_ = "";
     /**
      * <pre>
-     * 模型名称（如gpt-3.5-turbo）
+     * 模型名称
      * </pre>
      *
      * <code>string model = 2;</code>
+     *
      * @return The model.
      */
+    @java.lang.Override
     public java.lang.String getModel() {
-      java.lang.Object ref = model_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        model_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     * <pre>
-     * 模型名称（如gpt-3.5-turbo）
-     * </pre>
-     *
-     * <code>string model = 2;</code>
-     * @return The bytes for model.
-     */
-    public com.google.protobuf.ByteString
-        getModelBytes() {
-      java.lang.Object ref = model_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        model_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <pre>
-     * 模型名称（如gpt-3.5-turbo）
-     * </pre>
-     *
-     * <code>string model = 2;</code>
-     * @param value The model to set.
-     * @return This builder for chaining.
-     */
-    public Builder setModel(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
-      model_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * 模型名称（如gpt-3.5-turbo）
-     * </pre>
-     *
-     * <code>string model = 2;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearModel() {
-      
-      model_ = getDefaultInstance().getModel();
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * 模型名称（如gpt-3.5-turbo）
-     * </pre>
-     *
-     * <code>string model = 2;</code>
-     * @param value The bytes for model to set.
-     * @return This builder for chaining.
-     */
-    public Builder setModelBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
-      model_ = value;
-      onChanged();
-      return this;
+        java.lang.Object ref = model_;
+        if (ref instanceof java.lang.String) {
+            return (java.lang.String) ref;
+        } else {
+            com.google.protobuf.ByteString bs =
+                    (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            model_ = s;
+            return s;
+        }
     }
 
-    private com.google.protobuf.MapField<
-        java.lang.String, java.lang.String> parameters_;
+    /**
+     * <pre>
+     * 模型名称
+     * </pre>
+     *
+     * <code>string model = 2;</code>
+     *
+     * @return The bytes for model.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+    getModelBytes() {
+        java.lang.Object ref = model_;
+        if (ref instanceof java.lang.String) {
+            com.google.protobuf.ByteString b =
+                    com.google.protobuf.ByteString.copyFromUtf8(
+                            (java.lang.String) ref);
+            model_ = b;
+            return b;
+        } else {
+            return (com.google.protobuf.ByteString) ref;
+        }
+    }
+
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
     internalGetParameters() {
-      if (parameters_ == null) {
-        return com.google.protobuf.MapField.emptyMapField(
-            ParametersDefaultEntryHolder.defaultEntry);
-      }
-      return parameters_;
-    }
-    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
-    internalGetMutableParameters() {
-      onChanged();;
-      if (parameters_ == null) {
-        parameters_ = com.google.protobuf.MapField.newMapField(
-            ParametersDefaultEntryHolder.defaultEntry);
-      }
-      if (!parameters_.isMutable()) {
-        parameters_ = parameters_.copy();
-      }
-      return parameters_;
+        if (parameters_ == null) {
+            return com.google.protobuf.MapField.emptyMapField(
+                    ParametersDefaultEntryHolder.defaultEntry);
+        }
+        return parameters_;
     }
 
     public int getParametersCount() {
-      return internalGetParameters().getMap().size();
+        return internalGetParameters().getMap().size();
     }
+
     /**
      * <pre>
-     * 推理参数（temperature/max_tokens）
+     * 模型参数
      * </pre>
      *
      * <code>map&lt;string, string&gt; parameters = 3;</code>
@@ -915,21 +368,25 @@ private static final long serialVersionUID = 0L;
 
     @java.lang.Override
     public boolean containsParameters(
-        java.lang.String key) {
-      if (key == null) { throw new NullPointerException("map key"); }
-      return internalGetParameters().getMap().containsKey(key);
+            java.lang.String key) {
+        if (key == null) {
+            throw new NullPointerException("map key");
+        }
+        return internalGetParameters().getMap().containsKey(key);
     }
+
     /**
      * Use {@link #getParametersMap()} instead.
      */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getParameters() {
-      return getParametersMap();
+        return getParametersMap();
     }
+
     /**
      * <pre>
-     * 推理参数（temperature/max_tokens）
+     * 模型参数
      * </pre>
      *
      * <code>map&lt;string, string&gt; parameters = 3;</code>
@@ -937,11 +394,12 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
 
     public java.util.Map<java.lang.String, java.lang.String> getParametersMap() {
-      return internalGetParameters().getMap();
+        return internalGetParameters().getMap();
     }
+
     /**
      * <pre>
-     * 推理参数（temperature/max_tokens）
+     * 模型参数
      * </pre>
      *
      * <code>map&lt;string, string&gt; parameters = 3;</code>
@@ -949,16 +407,19 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
 
     public java.lang.String getParametersOrDefault(
-        java.lang.String key,
-        java.lang.String defaultValue) {
-      if (key == null) { throw new NullPointerException("map key"); }
-      java.util.Map<java.lang.String, java.lang.String> map =
-          internalGetParameters().getMap();
-      return map.containsKey(key) ? map.get(key) : defaultValue;
+            java.lang.String key,
+            java.lang.String defaultValue) {
+        if (key == null) {
+            throw new NullPointerException("map key");
+        }
+        java.util.Map<java.lang.String, java.lang.String> map =
+                internalGetParameters().getMap();
+        return map.containsKey(key) ? map.get(key) : defaultValue;
     }
+
     /**
      * <pre>
-     * 推理参数（temperature/max_tokens）
+     * 模型参数
      * </pre>
      *
      * <code>map&lt;string, string&gt; parameters = 3;</code>
@@ -966,127 +427,757 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
 
     public java.lang.String getParametersOrThrow(
-        java.lang.String key) {
-      if (key == null) { throw new NullPointerException("map key"); }
-      java.util.Map<java.lang.String, java.lang.String> map =
-          internalGetParameters().getMap();
-      if (!map.containsKey(key)) {
-        throw new java.lang.IllegalArgumentException();
-      }
-      return map.get(key);
-    }
-
-    public Builder clearParameters() {
-      internalGetMutableParameters().getMutableMap()
-          .clear();
-      return this;
-    }
-    /**
-     * <pre>
-     * 推理参数（temperature/max_tokens）
-     * </pre>
-     *
-     * <code>map&lt;string, string&gt; parameters = 3;</code>
-     */
-
-    public Builder removeParameters(
-        java.lang.String key) {
-      if (key == null) { throw new NullPointerException("map key"); }
-      internalGetMutableParameters().getMutableMap()
-          .remove(key);
-      return this;
-    }
-    /**
-     * Use alternate mutation accessors instead.
-     */
-    @java.lang.Deprecated
-    public java.util.Map<java.lang.String, java.lang.String>
-    getMutableParameters() {
-      return internalGetMutableParameters().getMutableMap();
-    }
-    /**
-     * <pre>
-     * 推理参数（temperature/max_tokens）
-     * </pre>
-     *
-     * <code>map&lt;string, string&gt; parameters = 3;</code>
-     */
-    public Builder putParameters(
-        java.lang.String key,
-        java.lang.String value) {
-      if (key == null) { throw new NullPointerException("map key"); }
-      if (value == null) {
-  throw new NullPointerException("map value");
-}
-
-      internalGetMutableParameters().getMutableMap()
-          .put(key, value);
-      return this;
-    }
-    /**
-     * <pre>
-     * 推理参数（temperature/max_tokens）
-     * </pre>
-     *
-     * <code>map&lt;string, string&gt; parameters = 3;</code>
-     */
-
-    public Builder putAllParameters(
-        java.util.Map<java.lang.String, java.lang.String> values) {
-      internalGetMutableParameters().getMutableMap()
-          .putAll(values);
-      return this;
-    }
-    @java.lang.Override
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFields(unknownFields);
+            java.lang.String key) {
+        if (key == null) {
+            throw new NullPointerException("map key");
+        }
+        java.util.Map<java.lang.String, java.lang.String> map =
+                internalGetParameters().getMap();
+        if (!map.containsKey(key)) {
+            throw new java.lang.IllegalArgumentException();
+        }
+        return map.get(key);
     }
 
     @java.lang.Override
-    public final Builder mergeUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.mergeUnknownFields(unknownFields);
+    public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
     }
 
-
-    // @@protoc_insertion_point(builder_scope:com.agent.adapter.python.LlmInferRequest)
-  }
-
-  // @@protoc_insertion_point(class_scope:com.agent.adapter.python.LlmInferRequest)
-  private static final com.popcorn.agent.core.adapter.python.grpc.LlmInferRequest DEFAULT_INSTANCE;
-  static {
-    DEFAULT_INSTANCE = new com.popcorn.agent.core.adapter.python.grpc.LlmInferRequest();
-  }
-
-  public static com.popcorn.agent.core.adapter.python.grpc.LlmInferRequest getDefaultInstance() {
-    return DEFAULT_INSTANCE;
-  }
-
-  private static final com.google.protobuf.Parser<LlmInferRequest>
-      PARSER = new com.google.protobuf.AbstractParser<LlmInferRequest>() {
     @java.lang.Override
-    public LlmInferRequest parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return new LlmInferRequest(input, extensionRegistry);
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+            throws java.io.IOException {
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(prompt_)) {
+            com.google.protobuf.GeneratedMessageV3.writeString(output, 1, prompt_);
+        }
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(model_)) {
+            com.google.protobuf.GeneratedMessageV3.writeString(output, 2, model_);
+        }
+        com.google.protobuf.GeneratedMessageV3
+                .serializeStringMapTo(
+                        output,
+                        internalGetParameters(),
+                        ParametersDefaultEntryHolder.defaultEntry,
+                        3);
+        unknownFields.writeTo(output);
     }
-  };
 
-  public static com.google.protobuf.Parser<LlmInferRequest> parser() {
-    return PARSER;
-  }
+    @java.lang.Override
+    public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
 
-  @java.lang.Override
-  public com.google.protobuf.Parser<LlmInferRequest> getParserForType() {
-    return PARSER;
-  }
+        size = 0;
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(prompt_)) {
+            size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, prompt_);
+        }
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(model_)) {
+            size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, model_);
+        }
+        for (java.util.Map.Entry<java.lang.String, java.lang.String> entry
+                : internalGetParameters().getMap().entrySet()) {
+            com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
+                    parameters__ = ParametersDefaultEntryHolder.defaultEntry.newBuilderForType()
+                    .setKey(entry.getKey())
+                    .setValue(entry.getValue())
+                    .build();
+            size += com.google.protobuf.CodedOutputStream
+                    .computeMessageSize(3, parameters__);
+        }
+        size += unknownFields.getSerializedSize();
+        memoizedSize = size;
+        return size;
+    }
 
-  @java.lang.Override
-  public com.popcorn.agent.core.adapter.python.grpc.LlmInferRequest getDefaultInstanceForType() {
-    return DEFAULT_INSTANCE;
-  }
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+            return true;
+        }
+        if (!(obj instanceof com.popcorn.agent.core.adapter.python.grpc.LlmInferRequest)) {
+            return super.equals(obj);
+        }
+        com.popcorn.agent.core.adapter.python.grpc.LlmInferRequest other = (com.popcorn.agent.core.adapter.python.grpc.LlmInferRequest) obj;
+
+        if (!getPrompt()
+                .equals(other.getPrompt())) return false;
+        if (!getModel()
+                .equals(other.getModel())) return false;
+        if (!internalGetParameters().equals(
+                other.internalGetParameters())) return false;
+        if (!unknownFields.equals(other.unknownFields)) return false;
+        return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+        if (memoizedHashCode != 0) {
+            return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        hash = (37 * hash) + PROMPT_FIELD_NUMBER;
+        hash = (53 * hash) + getPrompt().hashCode();
+        hash = (37 * hash) + MODEL_FIELD_NUMBER;
+        hash = (53 * hash) + getModel().hashCode();
+        if (!internalGetParameters().getMap().isEmpty()) {
+            hash = (37 * hash) + PARAMETERS_FIELD_NUMBER;
+            hash = (53 * hash) + internalGetParameters().hashCode();
+        }
+        hash = (29 * hash) + unknownFields.hashCode();
+        memoizedHashCode = hash;
+        return hash;
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+        return newBuilder();
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE
+                ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+            com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<LlmInferRequest> getParserForType() {
+        return PARSER;
+    }
+
+    @java.lang.Override
+    public com.popcorn.agent.core.adapter.python.grpc.LlmInferRequest getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+    }
+
+    private static final class ParametersDefaultEntryHolder {
+        static final com.google.protobuf.MapEntry<
+                java.lang.String, java.lang.String> defaultEntry =
+                com.google.protobuf.MapEntry
+                        .<java.lang.String, java.lang.String>newDefaultInstance(
+                                com.popcorn.agent.core.adapter.python.grpc.PythonAgentProto.internal_static_com_agent_adapter_python_LlmInferRequest_ParametersEntry_descriptor,
+                                com.google.protobuf.WireFormat.FieldType.STRING,
+                                "",
+                                com.google.protobuf.WireFormat.FieldType.STRING,
+                                "");
+    }
+
+    /**
+     * <pre>
+     * LLM推理请求
+     * </pre>
+     * <p>
+     * Protobuf type {@code com.agent.adapter.python.LlmInferRequest}
+     */
+    public static final class Builder extends
+            com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+            // @@protoc_insertion_point(builder_implements:com.agent.adapter.python.LlmInferRequest)
+            com.popcorn.agent.core.adapter.python.grpc.LlmInferRequestOrBuilder {
+        private int bitField0_;
+        private java.lang.Object prompt_ = "";
+        private java.lang.Object model_ = "";
+        private com.google.protobuf.MapField<
+                java.lang.String, java.lang.String> parameters_;
+
+        // Construct using com.popcorn.agent.core.adapter.python.grpc.LlmInferRequest.newBuilder()
+        private Builder() {
+            maybeForceBuilderInitialization();
+        }
+
+        private Builder(
+                com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+            super(parent);
+            maybeForceBuilderInitialization();
+        }
+
+        public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+            return com.popcorn.agent.core.adapter.python.grpc.PythonAgentProto.internal_static_com_agent_adapter_python_LlmInferRequest_descriptor;
+        }
+
+        @SuppressWarnings({"rawtypes"})
+        protected com.google.protobuf.MapField internalGetMapField(
+                int number) {
+            switch (number) {
+                case 3:
+                    return internalGetParameters();
+                default:
+                    throw new RuntimeException(
+                            "Invalid map field number: " + number);
+            }
+        }
+
+        @SuppressWarnings({"rawtypes"})
+        protected com.google.protobuf.MapField internalGetMutableMapField(
+                int number) {
+            switch (number) {
+                case 3:
+                    return internalGetMutableParameters();
+                default:
+                    throw new RuntimeException(
+                            "Invalid map field number: " + number);
+            }
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+            return com.popcorn.agent.core.adapter.python.grpc.PythonAgentProto.internal_static_com_agent_adapter_python_LlmInferRequest_fieldAccessorTable
+                    .ensureFieldAccessorsInitialized(
+                            com.popcorn.agent.core.adapter.python.grpc.LlmInferRequest.class, com.popcorn.agent.core.adapter.python.grpc.LlmInferRequest.Builder.class);
+        }
+
+        private void maybeForceBuilderInitialization() {
+            if (com.google.protobuf.GeneratedMessageV3
+                    .alwaysUseFieldBuilders) {
+            }
+        }
+
+        @java.lang.Override
+        public Builder clear() {
+            super.clear();
+            prompt_ = "";
+
+            model_ = "";
+
+            internalGetMutableParameters().clear();
+            return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor
+        getDescriptorForType() {
+            return com.popcorn.agent.core.adapter.python.grpc.PythonAgentProto.internal_static_com_agent_adapter_python_LlmInferRequest_descriptor;
+        }
+
+        @java.lang.Override
+        public com.popcorn.agent.core.adapter.python.grpc.LlmInferRequest getDefaultInstanceForType() {
+            return com.popcorn.agent.core.adapter.python.grpc.LlmInferRequest.getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public com.popcorn.agent.core.adapter.python.grpc.LlmInferRequest build() {
+            com.popcorn.agent.core.adapter.python.grpc.LlmInferRequest result = buildPartial();
+            if (!result.isInitialized()) {
+                throw newUninitializedMessageException(result);
+            }
+            return result;
+        }
+
+        @java.lang.Override
+        public com.popcorn.agent.core.adapter.python.grpc.LlmInferRequest buildPartial() {
+            com.popcorn.agent.core.adapter.python.grpc.LlmInferRequest result = new com.popcorn.agent.core.adapter.python.grpc.LlmInferRequest(this);
+            int from_bitField0_ = bitField0_;
+            result.prompt_ = prompt_;
+            result.model_ = model_;
+            result.parameters_ = internalGetParameters();
+            result.parameters_.makeImmutable();
+            onBuilt();
+            return result;
+        }
+
+        @java.lang.Override
+        public Builder clone() {
+            return super.clone();
+        }
+
+        @java.lang.Override
+        public Builder setField(
+                com.google.protobuf.Descriptors.FieldDescriptor field,
+                java.lang.Object value) {
+            return super.setField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder clearField(
+                com.google.protobuf.Descriptors.FieldDescriptor field) {
+            return super.clearField(field);
+        }
+
+        @java.lang.Override
+        public Builder clearOneof(
+                com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+            return super.clearOneof(oneof);
+        }
+
+        @java.lang.Override
+        public Builder setRepeatedField(
+                com.google.protobuf.Descriptors.FieldDescriptor field,
+                int index, java.lang.Object value) {
+            return super.setRepeatedField(field, index, value);
+        }
+
+        @java.lang.Override
+        public Builder addRepeatedField(
+                com.google.protobuf.Descriptors.FieldDescriptor field,
+                java.lang.Object value) {
+            return super.addRepeatedField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+            if (other instanceof com.popcorn.agent.core.adapter.python.grpc.LlmInferRequest) {
+                return mergeFrom((com.popcorn.agent.core.adapter.python.grpc.LlmInferRequest) other);
+            } else {
+                super.mergeFrom(other);
+                return this;
+            }
+        }
+
+        public Builder mergeFrom(com.popcorn.agent.core.adapter.python.grpc.LlmInferRequest other) {
+            if (other == com.popcorn.agent.core.adapter.python.grpc.LlmInferRequest.getDefaultInstance()) return this;
+            if (!other.getPrompt().isEmpty()) {
+                prompt_ = other.prompt_;
+                onChanged();
+            }
+            if (!other.getModel().isEmpty()) {
+                model_ = other.model_;
+                onChanged();
+            }
+            internalGetMutableParameters().mergeFrom(
+                    other.internalGetParameters());
+            this.mergeUnknownFields(other.unknownFields);
+            onChanged();
+            return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+            return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+            com.popcorn.agent.core.adapter.python.grpc.LlmInferRequest parsedMessage = null;
+            try {
+                parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                parsedMessage = (com.popcorn.agent.core.adapter.python.grpc.LlmInferRequest) e.getUnfinishedMessage();
+                throw e.unwrapIOException();
+            } finally {
+                if (parsedMessage != null) {
+                    mergeFrom(parsedMessage);
+                }
+            }
+            return this;
+        }
+
+        /**
+         * <pre>
+         * 推理提示词
+         * </pre>
+         *
+         * <code>string prompt = 1;</code>
+         *
+         * @return The prompt.
+         */
+        public java.lang.String getPrompt() {
+            java.lang.Object ref = prompt_;
+            if (!(ref instanceof java.lang.String)) {
+                com.google.protobuf.ByteString bs =
+                        (com.google.protobuf.ByteString) ref;
+                java.lang.String s = bs.toStringUtf8();
+                prompt_ = s;
+                return s;
+            } else {
+                return (java.lang.String) ref;
+            }
+        }
+
+        /**
+         * <pre>
+         * 推理提示词
+         * </pre>
+         *
+         * <code>string prompt = 1;</code>
+         *
+         * @param value The prompt to set.
+         * @return This builder for chaining.
+         */
+        public Builder setPrompt(
+                java.lang.String value) {
+            if (value == null) {
+                throw new NullPointerException();
+            }
+
+            prompt_ = value;
+            onChanged();
+            return this;
+        }
+
+        /**
+         * <pre>
+         * 推理提示词
+         * </pre>
+         *
+         * <code>string prompt = 1;</code>
+         *
+         * @return The bytes for prompt.
+         */
+        public com.google.protobuf.ByteString
+        getPromptBytes() {
+            java.lang.Object ref = prompt_;
+            if (ref instanceof String) {
+                com.google.protobuf.ByteString b =
+                        com.google.protobuf.ByteString.copyFromUtf8(
+                                (java.lang.String) ref);
+                prompt_ = b;
+                return b;
+            } else {
+                return (com.google.protobuf.ByteString) ref;
+            }
+        }
+
+        /**
+         * <pre>
+         * 推理提示词
+         * </pre>
+         *
+         * <code>string prompt = 1;</code>
+         *
+         * @param value The bytes for prompt to set.
+         * @return This builder for chaining.
+         */
+        public Builder setPromptBytes(
+                com.google.protobuf.ByteString value) {
+            if (value == null) {
+                throw new NullPointerException();
+            }
+            checkByteStringIsUtf8(value);
+
+            prompt_ = value;
+            onChanged();
+            return this;
+        }
+
+        /**
+         * <pre>
+         * 推理提示词
+         * </pre>
+         *
+         * <code>string prompt = 1;</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearPrompt() {
+
+            prompt_ = getDefaultInstance().getPrompt();
+            onChanged();
+            return this;
+        }
+
+        /**
+         * <pre>
+         * 模型名称
+         * </pre>
+         *
+         * <code>string model = 2;</code>
+         *
+         * @return The model.
+         */
+        public java.lang.String getModel() {
+            java.lang.Object ref = model_;
+            if (!(ref instanceof java.lang.String)) {
+                com.google.protobuf.ByteString bs =
+                        (com.google.protobuf.ByteString) ref;
+                java.lang.String s = bs.toStringUtf8();
+                model_ = s;
+                return s;
+            } else {
+                return (java.lang.String) ref;
+            }
+        }
+
+        /**
+         * <pre>
+         * 模型名称
+         * </pre>
+         *
+         * <code>string model = 2;</code>
+         *
+         * @param value The model to set.
+         * @return This builder for chaining.
+         */
+        public Builder setModel(
+                java.lang.String value) {
+            if (value == null) {
+                throw new NullPointerException();
+            }
+
+            model_ = value;
+            onChanged();
+            return this;
+        }
+
+        /**
+         * <pre>
+         * 模型名称
+         * </pre>
+         *
+         * <code>string model = 2;</code>
+         *
+         * @return The bytes for model.
+         */
+        public com.google.protobuf.ByteString
+        getModelBytes() {
+            java.lang.Object ref = model_;
+            if (ref instanceof String) {
+                com.google.protobuf.ByteString b =
+                        com.google.protobuf.ByteString.copyFromUtf8(
+                                (java.lang.String) ref);
+                model_ = b;
+                return b;
+            } else {
+                return (com.google.protobuf.ByteString) ref;
+            }
+        }
+
+        /**
+         * <pre>
+         * 模型名称
+         * </pre>
+         *
+         * <code>string model = 2;</code>
+         *
+         * @param value The bytes for model to set.
+         * @return This builder for chaining.
+         */
+        public Builder setModelBytes(
+                com.google.protobuf.ByteString value) {
+            if (value == null) {
+                throw new NullPointerException();
+            }
+            checkByteStringIsUtf8(value);
+
+            model_ = value;
+            onChanged();
+            return this;
+        }
+
+        /**
+         * <pre>
+         * 模型名称
+         * </pre>
+         *
+         * <code>string model = 2;</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearModel() {
+
+            model_ = getDefaultInstance().getModel();
+            onChanged();
+            return this;
+        }
+
+        private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+        internalGetParameters() {
+            if (parameters_ == null) {
+                return com.google.protobuf.MapField.emptyMapField(
+                        ParametersDefaultEntryHolder.defaultEntry);
+            }
+            return parameters_;
+        }
+
+        private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+        internalGetMutableParameters() {
+            onChanged();
+            ;
+            if (parameters_ == null) {
+                parameters_ = com.google.protobuf.MapField.newMapField(
+                        ParametersDefaultEntryHolder.defaultEntry);
+            }
+            if (!parameters_.isMutable()) {
+                parameters_ = parameters_.copy();
+            }
+            return parameters_;
+        }
+
+        public int getParametersCount() {
+            return internalGetParameters().getMap().size();
+        }
+
+        /**
+         * <pre>
+         * 模型参数
+         * </pre>
+         *
+         * <code>map&lt;string, string&gt; parameters = 3;</code>
+         */
+
+        @java.lang.Override
+        public boolean containsParameters(
+                java.lang.String key) {
+            if (key == null) {
+                throw new NullPointerException("map key");
+            }
+            return internalGetParameters().getMap().containsKey(key);
+        }
+
+        /**
+         * Use {@link #getParametersMap()} instead.
+         */
+        @java.lang.Override
+        @java.lang.Deprecated
+        public java.util.Map<java.lang.String, java.lang.String> getParameters() {
+            return getParametersMap();
+        }
+
+        /**
+         * <pre>
+         * 模型参数
+         * </pre>
+         *
+         * <code>map&lt;string, string&gt; parameters = 3;</code>
+         */
+        @java.lang.Override
+
+        public java.util.Map<java.lang.String, java.lang.String> getParametersMap() {
+            return internalGetParameters().getMap();
+        }
+
+        /**
+         * <pre>
+         * 模型参数
+         * </pre>
+         *
+         * <code>map&lt;string, string&gt; parameters = 3;</code>
+         */
+        @java.lang.Override
+
+        public java.lang.String getParametersOrDefault(
+                java.lang.String key,
+                java.lang.String defaultValue) {
+            if (key == null) {
+                throw new NullPointerException("map key");
+            }
+            java.util.Map<java.lang.String, java.lang.String> map =
+                    internalGetParameters().getMap();
+            return map.containsKey(key) ? map.get(key) : defaultValue;
+        }
+
+        /**
+         * <pre>
+         * 模型参数
+         * </pre>
+         *
+         * <code>map&lt;string, string&gt; parameters = 3;</code>
+         */
+        @java.lang.Override
+
+        public java.lang.String getParametersOrThrow(
+                java.lang.String key) {
+            if (key == null) {
+                throw new NullPointerException("map key");
+            }
+            java.util.Map<java.lang.String, java.lang.String> map =
+                    internalGetParameters().getMap();
+            if (!map.containsKey(key)) {
+                throw new java.lang.IllegalArgumentException();
+            }
+            return map.get(key);
+        }
+
+        public Builder clearParameters() {
+            internalGetMutableParameters().getMutableMap()
+                    .clear();
+            return this;
+        }
+
+        /**
+         * <pre>
+         * 模型参数
+         * </pre>
+         *
+         * <code>map&lt;string, string&gt; parameters = 3;</code>
+         */
+
+        public Builder removeParameters(
+                java.lang.String key) {
+            if (key == null) {
+                throw new NullPointerException("map key");
+            }
+            internalGetMutableParameters().getMutableMap()
+                    .remove(key);
+            return this;
+        }
+
+        /**
+         * Use alternate mutation accessors instead.
+         */
+        @java.lang.Deprecated
+        public java.util.Map<java.lang.String, java.lang.String>
+        getMutableParameters() {
+            return internalGetMutableParameters().getMutableMap();
+        }
+
+        /**
+         * <pre>
+         * 模型参数
+         * </pre>
+         *
+         * <code>map&lt;string, string&gt; parameters = 3;</code>
+         */
+        public Builder putParameters(
+                java.lang.String key,
+                java.lang.String value) {
+            if (key == null) {
+                throw new NullPointerException("map key");
+            }
+            if (value == null) {
+                throw new NullPointerException("map value");
+            }
+
+            internalGetMutableParameters().getMutableMap()
+                    .put(key, value);
+            return this;
+        }
+
+        /**
+         * <pre>
+         * 模型参数
+         * </pre>
+         *
+         * <code>map&lt;string, string&gt; parameters = 3;</code>
+         */
+
+        public Builder putAllParameters(
+                java.util.Map<java.lang.String, java.lang.String> values) {
+            internalGetMutableParameters().getMutableMap()
+                    .putAll(values);
+            return this;
+        }
+
+        @java.lang.Override
+        public final Builder setUnknownFields(
+                final com.google.protobuf.UnknownFieldSet unknownFields) {
+            return super.setUnknownFields(unknownFields);
+        }
+
+        @java.lang.Override
+        public final Builder mergeUnknownFields(
+                final com.google.protobuf.UnknownFieldSet unknownFields) {
+            return super.mergeUnknownFields(unknownFields);
+        }
+
+
+        // @@protoc_insertion_point(builder_scope:com.agent.adapter.python.LlmInferRequest)
+    }
 
 }
 

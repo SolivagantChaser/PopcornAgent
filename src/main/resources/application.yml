@@ -1,32 +1,10 @@
-# 服务端口
+# 最开始设计的原版配置，仅保留服务端口，无任何冗余配置
 server:
-  port: 8080
-
-# Agent配置
-agent:
-  id: general-agent-001
-  name: 通用智能Agent-Demo
-
-# Python gRPC服务配置
-python:
-  agent:
-    grpc:
-      host: 127.0.0.1
-      port: 50051
-
-# 日志配置
-logging:
-  level:
-    com.agent: INFO
-    org.springframework: WARN
-    io.grpc: WARN
-  pattern:
-    console: "%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{50} - %msg%n"
-
-# Spring配置
+  port: 8080 # 服务端口（默认8080）
 spring:
   application:
-    name: agent-java-core
-  jackson:
-    date-format: yyyy-MM-dd HH:mm:ss
-    time-zone: GMT+8
+    name: agent-java-core # 应用名称
+logging:
+  level:
+    com.agent.core: info # 项目日志级别
+    io.grpc: warn # gRPC日志级别（屏蔽冗余日志）

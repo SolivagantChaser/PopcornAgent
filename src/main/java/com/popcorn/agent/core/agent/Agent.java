@@ -1,40 +1,23 @@
 package com.popcorn.agent.core.agent;
 
-
 /**
- * Agent 顶级核心接口：定义 Agent 的核心行为（感知-规划-执行-反思-记忆）
- * 单一职责原则，所有 Agent 实例均实现此接口，便于统一管理和扩展
+ * 核心层 - Agent核心接口
+ * 定义Agent最基础能力，所有实现类必须遵循
  */
 public interface Agent {
     /**
-     * Agent 核心执行方法：处理用户请求，返回执行结果
+     * Agent核心执行方法
      *
-     * @param request 用户请求（包含问题、上下文、参数等）
-     * @return Agent 执行结果（包含答案、执行步骤、工具调用记录等）
+     * @param instruction 用户指令/任务
+     * @return 执行结果
+     * @throws Exception 执行异常
      */
-    AgentResponse execute(AgentRequest request);
+    String execute(String instruction) throws Exception;
 
     /**
-     * 获取 Agent 唯一标识
+     * 获取Agent唯一标识
      *
      * @return Agent ID
      */
     String getAgentId();
-
-    /**
-     * 获取 Agent 名称
-     *
-     * @return Agent 名称
-     */
-    String getName();
-
-    /**
-     * 初始化 Agent（加载配置、注册工具、连接依赖等）
-     */
-    void init();
-
-    /**
-     * 销毁 Agent（释放资源、关闭连接等）
-     */
-    void destroy();
 }

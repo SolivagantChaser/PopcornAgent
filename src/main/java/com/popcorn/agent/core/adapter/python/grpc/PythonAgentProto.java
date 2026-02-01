@@ -4,106 +4,108 @@
 package com.popcorn.agent.core.adapter.python.grpc;
 
 public final class PythonAgentProto {
-  private PythonAgentProto() {}
-  public static void registerAllExtensions(
-      com.google.protobuf.ExtensionRegistryLite registry) {
-  }
+    static final com.google.protobuf.Descriptors.Descriptor
+            internal_static_com_agent_adapter_python_LlmInferRequest_descriptor;
+    static final
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internal_static_com_agent_adapter_python_LlmInferRequest_fieldAccessorTable;
+    static final com.google.protobuf.Descriptors.Descriptor
+            internal_static_com_agent_adapter_python_LlmInferRequest_ParametersEntry_descriptor;
+    static final
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internal_static_com_agent_adapter_python_LlmInferRequest_ParametersEntry_fieldAccessorTable;
+    static final com.google.protobuf.Descriptors.Descriptor
+            internal_static_com_agent_adapter_python_LlmInferResponse_descriptor;
+    static final
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internal_static_com_agent_adapter_python_LlmInferResponse_fieldAccessorTable;
+    static final com.google.protobuf.Descriptors.Descriptor
+            internal_static_com_agent_adapter_python_DataProcessRequest_descriptor;
+    static final
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internal_static_com_agent_adapter_python_DataProcessRequest_fieldAccessorTable;
+    static final com.google.protobuf.Descriptors.Descriptor
+            internal_static_com_agent_adapter_python_DataProcessResponse_descriptor;
+    static final
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internal_static_com_agent_adapter_python_DataProcessResponse_fieldAccessorTable;
+    private static com.google.protobuf.Descriptors.FileDescriptor
+            descriptor;
 
-  public static void registerAllExtensions(
-      com.google.protobuf.ExtensionRegistry registry) {
-    registerAllExtensions(
-        (com.google.protobuf.ExtensionRegistryLite) registry);
-  }
-  static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_com_agent_adapter_python_LlmInferRequest_descriptor;
-  static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_com_agent_adapter_python_LlmInferRequest_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_com_agent_adapter_python_LlmInferRequest_ParametersEntry_descriptor;
-  static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_com_agent_adapter_python_LlmInferRequest_ParametersEntry_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_com_agent_adapter_python_LlmInferResponse_descriptor;
-  static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_com_agent_adapter_python_LlmInferResponse_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_com_agent_adapter_python_DataProcessRequest_descriptor;
-  static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_com_agent_adapter_python_DataProcessRequest_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_com_agent_adapter_python_DataProcessResponse_descriptor;
-  static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_com_agent_adapter_python_DataProcessResponse_fieldAccessorTable;
+    static {
+        java.lang.String[] descriptorData = {
+                "\n\022python_agent.proto\022\030com.agent.adapter." +
+                        "python\"\262\001\n\017LlmInferRequest\022\016\n\006prompt\030\001 \001" +
+                        "(\t\022\r\n\005model\030\002 \001(\t\022M\n\nparameters\030\003 \003(\01329." +
+                        "com.agent.adapter.python.LlmInferRequest" +
+                        ".ParametersEntry\0321\n\017ParametersEntry\022\013\n\003k" +
+                        "ey\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"F\n\020LlmInferR" +
+                        "esponse\022\017\n\007success\030\001 \001(\010\022\016\n\006result\030\002 \001(\t" +
+                        "\022\021\n\terror_msg\030\003 \001(\t\"8\n\022DataProcessReques" +
+                        "t\022\014\n\004data\030\001 \001(\t\022\024\n\014process_type\030\002 \001(\t\"I\n" +
+                        "\023DataProcessResponse\022\017\n\007success\030\001 \001(\010\022\016\n" +
+                        "\006result\030\002 \001(\t\022\021\n\terror_msg\030\003 \001(\t2\347\001\n\022Pyt" +
+                        "honAgentService\022c\n\010LlmInfer\022).com.agent." +
+                        "adapter.python.LlmInferRequest\032*.com.age" +
+                        "nt.adapter.python.LlmInferResponse\"\000\022l\n\013" +
+                        "DataProcess\022,.com.agent.adapter.python.D" +
+                        "ataProcessRequest\032-.com.agent.adapter.py" +
+                        "thon.DataProcessResponse\"\000BF\n*com.popcor" +
+                        "n.agent.core.adapter.python.grpcB\020Python" +
+                        "AgentProtoP\001\242\002\003PAPb\006proto3"
+        };
+        descriptor = com.google.protobuf.Descriptors.FileDescriptor
+                .internalBuildGeneratedFileFrom(descriptorData,
+                        new com.google.protobuf.Descriptors.FileDescriptor[]{
+                        });
+        internal_static_com_agent_adapter_python_LlmInferRequest_descriptor =
+                getDescriptor().getMessageTypes().get(0);
+        internal_static_com_agent_adapter_python_LlmInferRequest_fieldAccessorTable = new
+                com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+                internal_static_com_agent_adapter_python_LlmInferRequest_descriptor,
+                new java.lang.String[]{"Prompt", "Model", "Parameters",});
+        internal_static_com_agent_adapter_python_LlmInferRequest_ParametersEntry_descriptor =
+                internal_static_com_agent_adapter_python_LlmInferRequest_descriptor.getNestedTypes().get(0);
+        internal_static_com_agent_adapter_python_LlmInferRequest_ParametersEntry_fieldAccessorTable = new
+                com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+                internal_static_com_agent_adapter_python_LlmInferRequest_ParametersEntry_descriptor,
+                new java.lang.String[]{"Key", "Value",});
+        internal_static_com_agent_adapter_python_LlmInferResponse_descriptor =
+                getDescriptor().getMessageTypes().get(1);
+        internal_static_com_agent_adapter_python_LlmInferResponse_fieldAccessorTable = new
+                com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+                internal_static_com_agent_adapter_python_LlmInferResponse_descriptor,
+                new java.lang.String[]{"Success", "Result", "ErrorMsg",});
+        internal_static_com_agent_adapter_python_DataProcessRequest_descriptor =
+                getDescriptor().getMessageTypes().get(2);
+        internal_static_com_agent_adapter_python_DataProcessRequest_fieldAccessorTable = new
+                com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+                internal_static_com_agent_adapter_python_DataProcessRequest_descriptor,
+                new java.lang.String[]{"Data", "ProcessType",});
+        internal_static_com_agent_adapter_python_DataProcessResponse_descriptor =
+                getDescriptor().getMessageTypes().get(3);
+        internal_static_com_agent_adapter_python_DataProcessResponse_fieldAccessorTable = new
+                com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+                internal_static_com_agent_adapter_python_DataProcessResponse_descriptor,
+                new java.lang.String[]{"Success", "Result", "ErrorMsg",});
+    }
+    private PythonAgentProto() {
+    }
 
-  public static com.google.protobuf.Descriptors.FileDescriptor
-      getDescriptor() {
-    return descriptor;
-  }
-  private static  com.google.protobuf.Descriptors.FileDescriptor
-      descriptor;
-  static {
-    java.lang.String[] descriptorData = {
-      "\n\022python_agent.proto\022\030com.agent.adapter." +
-      "python\"\262\001\n\017LlmInferRequest\022\016\n\006prompt\030\001 \001" +
-      "(\t\022\r\n\005model\030\002 \001(\t\022M\n\nparameters\030\003 \003(\01329." +
-      "com.agent.adapter.python.LlmInferRequest" +
-      ".ParametersEntry\0321\n\017ParametersEntry\022\013\n\003k" +
-      "ey\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"Y\n\020LlmInferR" +
-      "esponse\022\017\n\007success\030\001 \001(\010\022\016\n\006result\030\002 \001(\t" +
-      "\022\021\n\terror_msg\030\003 \001(\t\022\021\n\tcost_time\030\004 \001(\003\"8" +
-      "\n\022DataProcessRequest\022\014\n\004data\030\001 \001(\t\022\024\n\014pr" +
-      "ocess_type\030\002 \001(\t\"d\n\023DataProcessResponse\022" +
-      "\017\n\007success\030\001 \001(\010\022\026\n\016processed_data\030\002 \001(\t" +
-      "\022\021\n\terror_msg\030\003 \001(\t\022\021\n\tcost_time\030\004 \001(\0032\343" +
-      "\001\n\022PythonAgentService\022a\n\010LlmInfer\022).com." +
-      "agent.adapter.python.LlmInferRequest\032*.c" +
-      "om.agent.adapter.python.LlmInferResponse" +
-      "\022j\n\013DataProcess\022,.com.agent.adapter.pyth" +
-      "on.DataProcessRequest\032-.com.agent.adapte" +
-      "r.python.DataProcessResponseB@\n*com.popc" +
-      "orn.agent.core.adapter.python.grpcB\020Pyth" +
-      "onAgentProtoP\001b\006proto3"
-    };
-    descriptor = com.google.protobuf.Descriptors.FileDescriptor
-      .internalBuildGeneratedFileFrom(descriptorData,
-        new com.google.protobuf.Descriptors.FileDescriptor[] {
-        });
-    internal_static_com_agent_adapter_python_LlmInferRequest_descriptor =
-      getDescriptor().getMessageTypes().get(0);
-    internal_static_com_agent_adapter_python_LlmInferRequest_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_com_agent_adapter_python_LlmInferRequest_descriptor,
-        new java.lang.String[] { "Prompt", "Model", "Parameters", });
-    internal_static_com_agent_adapter_python_LlmInferRequest_ParametersEntry_descriptor =
-      internal_static_com_agent_adapter_python_LlmInferRequest_descriptor.getNestedTypes().get(0);
-    internal_static_com_agent_adapter_python_LlmInferRequest_ParametersEntry_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_com_agent_adapter_python_LlmInferRequest_ParametersEntry_descriptor,
-        new java.lang.String[] { "Key", "Value", });
-    internal_static_com_agent_adapter_python_LlmInferResponse_descriptor =
-      getDescriptor().getMessageTypes().get(1);
-    internal_static_com_agent_adapter_python_LlmInferResponse_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_com_agent_adapter_python_LlmInferResponse_descriptor,
-        new java.lang.String[] { "Success", "Result", "ErrorMsg", "CostTime", });
-    internal_static_com_agent_adapter_python_DataProcessRequest_descriptor =
-      getDescriptor().getMessageTypes().get(2);
-    internal_static_com_agent_adapter_python_DataProcessRequest_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_com_agent_adapter_python_DataProcessRequest_descriptor,
-        new java.lang.String[] { "Data", "ProcessType", });
-    internal_static_com_agent_adapter_python_DataProcessResponse_descriptor =
-      getDescriptor().getMessageTypes().get(3);
-    internal_static_com_agent_adapter_python_DataProcessResponse_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_com_agent_adapter_python_DataProcessResponse_descriptor,
-        new java.lang.String[] { "Success", "ProcessedData", "ErrorMsg", "CostTime", });
-  }
+    public static void registerAllExtensions(
+            com.google.protobuf.ExtensionRegistryLite registry) {
+    }
 
-  // @@protoc_insertion_point(outer_class_scope)
+    public static void registerAllExtensions(
+            com.google.protobuf.ExtensionRegistry registry) {
+        registerAllExtensions(
+                (com.google.protobuf.ExtensionRegistryLite) registry);
+    }
+
+    public static com.google.protobuf.Descriptors.FileDescriptor
+    getDescriptor() {
+        return descriptor;
+    }
+
+    // @@protoc_insertion_point(outer_class_scope)
 }

@@ -4,50 +4,63 @@
 package com.popcorn.agent.core.adapter.python.grpc;
 
 public interface DataProcessResponseOrBuilder extends
-    // @@protoc_insertion_point(interface_extends:com.agent.adapter.python.DataProcessResponse)
-    com.google.protobuf.MessageOrBuilder {
+        // @@protoc_insertion_point(interface_extends:com.agent.adapter.python.DataProcessResponse)
+        com.google.protobuf.MessageOrBuilder {
 
-  /**
-   * <code>bool success = 1;</code>
-   * @return The success.
-   */
-  boolean getSuccess();
+    /**
+     * <pre>
+     * 调用是否成功
+     * </pre>
+     *
+     * <code>bool success = 1;</code>
+     *
+     * @return The success.
+     */
+    boolean getSuccess();
 
-  /**
-   * <pre>
-   * 处理后数据（JSON格式）
-   * </pre>
-   *
-   * <code>string processed_data = 2;</code>
-   * @return The processedData.
-   */
-  java.lang.String getProcessedData();
-  /**
-   * <pre>
-   * 处理后数据（JSON格式）
-   * </pre>
-   *
-   * <code>string processed_data = 2;</code>
-   * @return The bytes for processedData.
-   */
-  com.google.protobuf.ByteString
-      getProcessedDataBytes();
+    /**
+     * <pre>
+     * 处理结果
+     * </pre>
+     *
+     * <code>string result = 2;</code>
+     *
+     * @return The result.
+     */
+    java.lang.String getResult();
 
-  /**
-   * <code>string error_msg = 3;</code>
-   * @return The errorMsg.
-   */
-  java.lang.String getErrorMsg();
-  /**
-   * <code>string error_msg = 3;</code>
-   * @return The bytes for errorMsg.
-   */
-  com.google.protobuf.ByteString
-      getErrorMsgBytes();
+    /**
+     * <pre>
+     * 处理结果
+     * </pre>
+     *
+     * <code>string result = 2;</code>
+     *
+     * @return The bytes for result.
+     */
+    com.google.protobuf.ByteString
+    getResultBytes();
 
-  /**
-   * <code>int64 cost_time = 4;</code>
-   * @return The costTime.
-   */
-  long getCostTime();
+    /**
+     * <pre>
+     * 错误信息（失败时非空）
+     * </pre>
+     *
+     * <code>string error_msg = 3;</code>
+     *
+     * @return The errorMsg.
+     */
+    java.lang.String getErrorMsg();
+
+    /**
+     * <pre>
+     * 错误信息（失败时非空）
+     * </pre>
+     *
+     * <code>string error_msg = 3;</code>
+     *
+     * @return The bytes for errorMsg.
+     */
+    com.google.protobuf.ByteString
+    getErrorMsgBytes();
 }
